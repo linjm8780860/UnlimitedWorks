@@ -1,0 +1,34 @@
+{
+  "input": "D:\\WORK\\aa\\Unlimited Works\\unlimited_works.exe",
+  "inputSha256": "cec4de45bbd4cc784d55b8bf50a754e01fa14fa0f9a27357a8001ae63e2f1706",
+  "resources": [
+    {
+      "path": "index.html",
+      "filenameOffset": 63645676,
+      "compressedBytes": 1104,
+      "bytes": 2618,
+      "sha256": "a8e61ba84ddfc259a9d04655be736ac7143d32b38b53f099512f82ffe414ff8d"
+    },
+    {
+      "path": "assets/index-DjRrn5cR.js",
+      "filenameOffset": 20502350,
+      "compressedBytes": 2160,
+      "bytes": 5353,
+      "sha256": "0f54957a5d6c205ac0debad50e47780f634d3af1fa16aef987c6acd6af0210a6"
+    },
+    {
+      "path": "assets/index-DCG6pvV7.js",
+      "filenameOffset": 24050692,
+      "compressedBytes": 2621204,
+      "bytes": 14585740,
+      "sha256": "fb6fe53415dd5e10e1ea06f7b1a87f85ff7cf56b7fa234da1dd4443bae80895a"
+    },
+    {
+      "path": "assets/index-BFpAZGXW.css",
+      "filenameOffset": 41382351,
+      "compressedBytes": 86546,
+      "bytes": 581503,
+      "sha256": "2c0996690cd1a3ae66d061f21c3c077e4927519b31c840cfbbc602376f886ff0"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Unlimited Works - AI 驱动的创意工作流" />
+    <title>Unlimited Works</title>
+    <!-- 预连接优化 -->
+    <link rel="preconnect" href="https://ai.comfly.org" />
+    <script type="module" crossorigin src="/assets/index-DCG6pvV7.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/lucide-MLwtlaUE.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-BYTcDeTJ.js">
+    <link rel="modulepreload" crossorigin href="/assets/marked-C_DcXP89.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BFpAZGXW.css">
+  </head>
+  <body class="bg-[#09090b] text-zinc-100">
+    <!-- 开场动画（独立于 React 渲染树） -->
+    <div id="splash-screen" style="position:fixed;inset:0;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+      <video id="splash-video" muted playsinline preload="auto" autoplay
+        style="width:100%;object-fit:contain;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 88%,transparent 100%);"
+        src="/splash/UW_开场动画.mp4"></video>
+    </div>
+    <div id="root"></div>
+    <script>
+      // Phase 1: 视频播放到 7s 暂停，等待 React 挂载设置 window.__splashReady = true
+      (function(){
+        var v = document.getElementById('splash-video');
+        if(!v) return;
+        window.__splashReady = false;
+        v.playbackRate = 2;
+        try{
+          // 跳过标记由 App.tsx 按「当前版本」的 store 写入（个人版/企业版 store key 不同），
+          // 此处只读这一个与版本无关的标记，避免在 HTML 里重复推导版本导致判定分歧。
+          if(localStorage.getItem('uw-splash-skip') === '1'){
+            var c = document.getElementById('splash-screen');
+            if(c) c.style.display = 'none';
+            try{ v.pause(); }catch(e){}
+            window.__splashReady = true;
+            return;
+          }
+        }catch(e){}
+        v.addEventListener('timeupdate', function f(){
+          if(v.currentTime >= 7 && !window.__splashReady){
+            v.pause();
+            v.removeEventListener('timeupdate', f);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
