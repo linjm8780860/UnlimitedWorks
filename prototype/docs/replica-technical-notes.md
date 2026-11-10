@@ -1,63 +1,195 @@
-# Unlimited Works 1:1 基线：技术说明
+# Unlimited Works 1:1 Replica Technical Notes
 
-日期：2026-11-05  
-工程目录：`prototype/`  
-应用框架：Next.js 15.5.29 App Router
+Date: 2026-11-08
 
-## 当前交付
+## Current Architecture
 
-当前首页使用提取出的生产 bundle 作为视觉基线。Next.js 将原始 `index.html` 和 root-relative 静态资源从 `reference/compiled-frontend/` 提供给浏览器，不复制或改写这 65 MB 的资源集。这样可以在尚无 Source Map 和原始组件源码的情况下，忠实呈现现有编译 UI。
+The primary application is now a Next.js 15 App Router project. The route group
+`src/app/(workspace)` shares a client application shell, while each major desktop surface
+is implemented as its own route:
 
-这属于对编译前端的 Next.js 托管，不是把原应用组件重写成 React/Next.js。原来的 SaaS mock 仍保留在 `/studio`，作为可单独访问的 React Flow 原型。
+- `/`
+- `/projects`
+- `/canvas`
+- `/skills`
+- `/plugins`
+- `/automations`
 
-## 路由与文件
+The old compiled frontend remains under `reference/compiled-frontend`. It is used as an
+evidence and asset source, not as the live application iframe.
 
-| 路径/文件 | 用途 |
-| --- | --- |
-| `/` | Next.js 页面加载全屏 iframe，内容指向 `/reference/index.html` |
-| `/reference/index.html` | 从 `reference/compiled-frontend/index.html` 提供原入口 |
-| `/assets/*`、`/icons/*`、`/splash/*` 等 | 动态资源路由从提取目录读取文件并返回对应 MIME 类型 |
-| `/studio` | 原有 SaaS mock 工作台 |
-| `src/app/page.tsx` | 编译前端 iframe 首页 |
-| `src/app/[...resource]/route.ts` | 静态文件读取、路径约束和 MIME 响应 |
-| `src/app/studio/page.tsx` | 挂载现有 `Root` 工作台 |
-| `src/styles.css` | iframe 全屏样式及 `/studio` 样式 |
-| `reference/compiled-frontend/` | 从 Unlimited Works 可执行包提取的生产资源 |
+## Application Shell
 
-资源路由将请求路径规范化到 `reference/compiled-frontend/` 下，并拒绝目录外路径。HTML 使用 `no-cache`，其他资源使用 1 小时缓存。常用 JS、CSS、HTML、图片、视频、字体和 WASM 扩展名有显式 MIME 映射。
+Verified reference dimensions:
 
-## 运行
+- Titlebar: 32 px high.
+- Sidebar: 168 px expanded, 48 px collapsed.
+- Sidebar resizer range: 160 to 280 px.
+- Settings dialog: 800 x 780 px at a 1512 x 828 viewport.
+- Home content column: 780 px wide.
+- Home heading: 44 px high.
+- Home composer shell: 780 x 158 px.
+- Recent projects section: 780 x 269 px.
 
-在 `prototype/` 目录执行：
+The reconstructed shell matches these dimensions. Sidebar state, width, theme, and
+responsive preference are persisted.
 
-```powershell
-npm install
-npm run dev
-```
+The app-wide canvas islands are rendered by the shell on every non-canvas route:
+new-tab, assets, Copilot, project management, save/export, map controls, asset management,
+and the floating ChatPanel launcher. The canvas route supplies its own document-aware
+versions of the same controls.
 
-`npm run dev` 默认使用 `http://127.0.0.1:4173`。本次验证时该端口已有服务，因此生产预览额外运行在 `http://127.0.0.1:4174`。生产启动命令为：
+## Visual Baseline
 
-```powershell
-npm run build
-node_modules\.bin\next start --hostname 127.0.0.1 --port 4174
-```
+`src/styles/original-ui.css` is the extracted production stylesheet. The reconstructed
+components reuse its typography, color, spacing, scrollbar, font, and interaction rules.
 
-## 验证记录
+`src/styles/tailwind.css` generates current utility classes for the reconstructed JSX,
+including `dark:` and `light:` variants. Tailwind uses class-based dark mode and a custom
+`light` variant scoped to `[data-theme="light"]`.
 
-- `npx tsc --noEmit`：通过。
-- `npm run build`：通过；构建包含 `/`、动态资源路由和 `/studio`。
-- 生产模式下，用同一 Chrome、同一 1440×960 视口对比 3000 参照页与 Next 首页的协议状态：差异像素为 0 / 1,382,400。
-- `/studio` 在浏览器中正常渲染 4 个 React Flow 节点、58 个按钮，没有 page error。
-- 主 JS、CSS、favicon 和开场动画在 Next 静态资源路由下均返回成功。
+`src/styles/replica.css` contains only new rules:
 
-## 当前边界
+- canvas grid and minimap patterns
+- node color tokens
+- settings action styling
+- mobile shell behavior
+- overrides required to remove stale absolute positioning from the compiled stylesheet
 
-1. 首屏会显示原应用软件协议。自动化没有替用户同意；主工作区的运行态布局和交互尚未采集。
-2. 编译前端会访问原桌面桥接端口 `9466/9467/9476/9477`。这些接口目前没有被 Next mock，网页里的原生文件、身份和其他桌面操作可能失败，也不应作为 SaaS 后端实现。
-3. `reference/compiled-frontend/manifest.json` 记录 17 个未解析本地资源引用，预览中至少有部分可选资源返回 404。
-4. `/studio` 使用前端演示数据，不接生产 API，也未接入 BizyHome 共享用户系统。
-5. 1:1 像素核验只覆盖首次协议页；没有覆盖主画布、移动布局、交互状态和原生 API。
+## State and Persistence
 
-## 下一步
+The former `WorkspaceProvider` has been removed. State is divided into domain stores:
 
-取得主画布运行态证据后，先整理页面状态、交互流程和本地桥接请求/响应，再实现独立的 mock API。之后决定以编译前端作为短期精确基线，还是依据观察结果逐步将界面迁移到 Next 组件。认证继续预留给 BizyHome，共享用户系统不在当前 mock 范围内。
+- `app-shell/shell-store.ts`: theme, sidebar layout, settings visibility, and toasts.
+- `workspace/workspace-store.ts`: workspaces and projects.
+- `chat/chat-store.ts`: conversations, messages, Agent mode, and model selection.
+- `settings/settings-store.ts`: application settings and model overrides.
+- `skills`, `plugins`, and `automations`: feature-local collections and commands.
+
+Each persisted store owns a version key and migrates legacy keys explicitly through
+`features/shared/legacy-migration.ts`. Components subscribe with domain selectors rather
+than consuming a single application-wide state object.
+
+Chat request selection lives in `features/chat/chat-service.ts`. All chat surfaces use the
+same `useChatSender()` path and runtime resolution instead of constructing provider
+requests independently.
+
+Asset metadata and encoded files move to IndexedDB through
+`features/assets/asset-repository.ts`. The asset store exposes hydration and mutation
+commands to UI components. Asset mutations are serialized, hydration deduplicates
+concurrent callers, and failed IndexedDB writes roll back optimistic state and surface an
+error to the shell.
+
+Canvas workspaces use a separate IndexedDB repository. Persistence is debounced during
+editing, writes are serialized, page hide flushes pending state, and legacy local canvas
+documents are migrated before the first editable render. Canvas writes no longer
+synchronously serialize the full workspace on every pointer move.
+
+## Canvas
+
+The canvas is a new DOM/SVG implementation with explicit module boundaries:
+
+- `domain/canvas-document.ts`: node catalog and default documents.
+- `geometry.ts`: snapping, alignment, and arrangement pure functions.
+- `use-canvas-documents.ts`: documents, tabs, migration, and bounded history.
+- `use-canvas-selection-commands.ts`: delete, clipboard, duplication, alignment, and
+  selection expansion.
+- `use-canvas-viewport-interactions.ts`: pan, zoom, marquee selection, focus, and wheel
+  behavior.
+- `use-canvas-node-interactions.ts`: node dragging, resizing, connections, and guides.
+- `canvas-transient-store.ts`: per-node drag/resize geometry and alignment-guide frames
+  outside persisted document state.
+- `use-canvas-keyboard.ts`: canvas keyboard command bindings.
+- `canvas-repository.ts`: IndexedDB canvas workspace loading, validation, migration, and
+  serialized writes.
+- `canvas-node-executors.ts`: executor registry for text/image nodes and local simulation.
+- `use-canvas-node-runner.ts`: abortable execution queue with stale-result protection.
+- `components/canvas-hud.tsx`: isolated FPS, selection, and viewport telemetry.
+- `components/canvas-page.tsx`: composition of document state and UI surfaces.
+- `components/canvas-node-card.tsx` and `canvas-panels.tsx`: focused visual surfaces.
+
+Implemented behavior:
+
+- 8000 x 8000 world plane
+- pan and Ctrl/Meta + wheel zoom
+- marquee selection
+- node dragging
+- transient drag frames with a single document commit on pointer up
+- twelve node types
+- input/output port connection flow
+- selection island with copy and delete
+- node action island with model, fixed-text, settings, and Run
+- minimap
+- FPS, selection, and viewport HUD
+- asset, Copilot, project, and save panels
+- JSON project export and import
+- multiple persisted canvas tabs with project association
+- undo/redo with bounded per-document history
+- copy, cut, paste, connected/unconnected duplication
+- resize handles and node width/height settings
+- focus, arrange, selection expansion, align, and equal-size commands
+- origin-node snapping with edge/center alignment guides while dragging
+- drag surface covers the title and all non-interactive areas of a node card
+- interactive controls, ports, and resize handles opt out with `data-node-no-drag`
+
+Verified canvas geometry at 1512 x 828:
+
+- canvas root: `168,32,1344,796`
+- top tab island: `180,40,188,42`
+- left tool island: asset button at `199,328`
+- HUD: `1383,48,113,66`
+- minimap control: `191,784`
+- ChatPanel launcher: `1444,760,44,44`
+- default input node: `420 x 280`, content inset `16px`
+
+The implementation intentionally does not execute bundled production modules. The node
+document schema is typed and persisted, and each visual feature has source-level ownership.
+
+## Settings
+
+The reconstructed settings dialog implements all evidence-backed sections:
+
+- 通用
+- UW Harness
+- 资产库
+- API 配置
+- 代理设置
+- 性能
+- 日志
+- UW Pro
+- 关于
+
+The General section is a small tab container over separately owned modules for 界面, 画布,
+快捷键, 提示词, 生成, and 技能. Model and workflow data are read from the extracted
+default config.
+
+## Local Research Boundaries
+
+- Chat completions and text nodes support a real OpenAI-compatible provider through
+  local Next API routes.
+- Image generation supports the standard OpenAI-compatible image endpoint; video, audio,
+  and 3D generation still use deterministic local simulation.
+- License activation, plugin process execution, native terminal access, and the desktop
+  bridge remain local approximations or explicit mock outcomes.
+- File System Access API directory pickers are used where the browser supports them.
+- Due automation plans are checked every 15 seconds and append their results to conversations.
+- Plugin source editing validates JSON metadata and installs local catalog entries; it
+  does not compile or execute arbitrary TypeScript in the browser.
+- Skill directory loading is adapted to a browser-compatible Markdown import and wizard.
+- The original native 3D renderer is represented by a labeled scene surface and remains a
+  candidate for a Three.js upgrade.
+
+These boundaries are explicit so the Next project stays maintainable and does not hide
+untrusted production bundle execution behind a visual wrapper.
+
+## Verification
+
+- `npx tsc --noEmit`: pass.
+- `npm run build`: pass.
+- `npm run test:e2e`: pass. Playwright covers canvas creation, dragging, undo, and all
+  settings sections.
+- Browser checks covered all main routes, project creation, skill restoration, plugin
+  installation, automation creation, every settings section and General sub-tab, theme
+  switching, sidebar collapse, canvas node creation, and node execution.
+- Desktop viewport checks use 1512 x 828.
+- Responsive checks use 390 x 844 with no horizontal overflow.

@@ -1,0 +1,4614 @@
+{
+  "theme": "dark",
+  "storageFormat": "flatbuffers",
+  "logConfig": {
+    "enabled": true,
+    "globalMinLevel": "INFO",
+    "consoleOutput": true,
+    "remoteOutput": true,
+    "tags": [
+      {
+        "tag": "api",
+        "enabled": true,
+        "description": "API 调用与轮询"
+      },
+      {
+        "tag": "lc",
+        "enabled": true,
+        "description": "本地连接器操作"
+      },
+      {
+        "tag": "project",
+        "enabled": true,
+        "description": "工程管理"
+      },
+      {
+        "tag": "node",
+        "enabled": true,
+        "description": "节点操作"
+      },
+      {
+        "tag": "chat",
+        "enabled": true,
+        "description": "聊天服务"
+      },
+      {
+        "tag": "Lightbox",
+        "enabled": true,
+        "description": "灯箱组件"
+      },
+      {
+        "tag": "Canvas",
+        "enabled": false,
+        "description": "画布操作（调试）"
+      },
+      {
+        "tag": "NodeFrame",
+        "enabled": false,
+        "minLevel": "WARN",
+        "description": "节点框架（调试）"
+      },
+      {
+        "tag": "ImageGenV2",
+        "enabled": false,
+        "minLevel": "WARN",
+        "description": "图片生成节点（调试）"
+      },
+      {
+        "tag": "NodePorts",
+        "enabled": false,
+        "minLevel": "WARN",
+        "description": "节点端口（调试）"
+      },
+      {
+        "tag": "ConnectionsLayer",
+        "enabled": false,
+        "minLevel": "WARN",
+        "description": "连接层（调试）"
+      },
+      {
+        "tag": "ref",
+        "enabled": false,
+        "description": "引用图片解析（调试）"
+      },
+      {
+        "tag": "ReferenceImageThumb",
+        "enabled": false,
+        "description": "引用图片缩略图（调试）"
+      },
+      {
+        "tag": "preloader",
+        "enabled": false,
+        "description": "参考图片预加载日志（调试）"
+      },
+      {
+        "tag": "wake-recovery",
+        "enabled": false,
+        "description": "macOS 唤醒恢复重绘日志（调试）"
+      },
+      {
+        "tag": "RichEditorBackspace",
+        "enabled": false,
+        "minLevel": "DEBUG",
+        "description": "Prompt 富文本引用 Backspace 诊断日志（调试）"
+      }
+    ]
+  },
+  "uwProPermissions": {
+    "stageEditor": "Pro",
+    "groupRun": "Pro",
+    "videoAnalyze": "Pro",
+    "crossProjectPaste": "Pro",
+    "seedanceAssetUploadChannel": "Pro",
+    "mcp_server": "Pro"
+  },
+  "performanceMode": false,
+  "showMultiInlineAIPrompts": true,
+  "enableTextNodeV2Markdown": true,
+  "jimengUseLocalFile": false,
+  "zoomThreshold": 0.25,
+  "globalApiKey": "",
+  "globalBaseUrl": "https://ai.comfly.org",
+  "baseUrlPresets": [
+    {
+      "id": "yukirito",
+      "label": "UW",
+      "url": "https://api.yukirito.com",
+      "icon": "/icons/providers/uw.png",
+      "devOnly": true
+    },
+    {
+      "id": "comfly",
+      "label": "Comfly",
+      "url": "https://ai.comfly.org",
+      "icon": "/icons/comfly.png"
+    },
+    {
+      "id": "bltcy",
+      "label": "柏拉图",
+      "url": "https://api.bltcy.ai",
+      "icon": "/icons/柏拉图AI.png",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "apilio",
+      "label": "阿波罗",
+      "url": "https://api.apilio.ai",
+      "icon": "/icons/providers/apilio.png"
+    },
+    {
+      "id": "prismapi",
+      "label": "Prism API",
+      "url": "https://prismapi.cn",
+      "icon": "/icons/providers/prismapi.svg",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "apimart",
+      "label": "APIMart-海外",
+      "url": "https://apimart.ai",
+      "icon": "/icons/providers/apimart-logo.svg",
+      "siteGroupId": "apimart",
+      "siteGroupLabel": "APIMart",
+      "siteGroupIcon": "/icons/providers/apimart-logo.svg",
+      "siteMemberLabel": "APIMart-海外"
+    },
+    {
+      "id": "apimart-apib",
+      "label": "APIMart-中国大陆1",
+      "url": "https://apib.ai",
+      "icon": "/icons/providers/apimart-logo.svg",
+      "siteGroupId": "apimart",
+      "siteGroupLabel": "APIMart",
+      "siteGroupIcon": "/icons/providers/apimart-logo.svg",
+      "siteMemberLabel": "APIMart-中国大陆1"
+    },
+    {
+      "id": "apimart-aiuxu",
+      "label": "APIMart-中国大陆2",
+      "url": "https://aiuxu.com",
+      "icon": "/icons/providers/apimart-logo.svg",
+      "siteGroupId": "apimart",
+      "siteGroupLabel": "APIMart",
+      "siteGroupIcon": "/icons/providers/apimart-logo.svg",
+      "siteMemberLabel": "APIMart-中国大陆2"
+    },
+    {
+      "id": "apimart-aishuch",
+      "label": "APIMart-中国大陆3",
+      "url": "https://aishuch.com",
+      "icon": "/icons/providers/apimart-logo.svg",
+      "siteGroupId": "apimart",
+      "siteGroupLabel": "APIMart",
+      "siteGroupIcon": "/icons/providers/apimart-logo.svg",
+      "siteMemberLabel": "APIMart-中国大陆3"
+    },
+    {
+      "id": "t8star",
+      "label": "T8Star",
+      "url": "https://ai.t8star.org",
+      "icon": "/icons/t8star.webp"
+    },
+    {
+      "id": "kling-official",
+      "label": "可灵",
+      "url": "https://api-beijing.klingai.com",
+      "icon": "/icons/providers/kling.svg"
+    },
+    {
+      "id": "minimax",
+      "label": "Minimax",
+      "url": "https://api.minimax.io",
+      "icon": "/icons/providers/minimax.svg"
+    },
+    {
+      "id": "metaso",
+      "label": "Metaso",
+      "url": "https://metaso.cn",
+      "icon": "/icons/providers/metaso.svg",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "volcengine",
+      "label": "火山引擎",
+      "url": "https://ark.cn-beijing.volces.com",
+      "icon": "/icons/providers/volcengine.svg",
+      "siteGroupId": "volcengine",
+      "siteGroupLabel": "火山引擎",
+      "siteGroupIcon": "/icons/providers/volcengine.svg",
+      "siteMemberLabel": "通用站点"
+    },
+    {
+      "id": "volcengine-mediakit",
+      "label": "AI MediaKit",
+      "url": "https://mediakit.cn-beijing.volces.com",
+      "icon": "/icons/providers/volcengine.svg",
+      "siteGroupId": "volcengine",
+      "siteGroupLabel": "火山引擎",
+      "siteGroupIcon": "/icons/providers/volcengine.svg",
+      "siteMemberLabel": "AI MediaKit"
+    },
+    {
+      "id": "volcengine-agentplan",
+      "label": "AgentPlan",
+      "url": "https://ark.cn-beijing.volces.com/api/plan/v3",
+      "icon": "/icons/providers/volcengine.svg",
+      "siteGroupId": "volcengine",
+      "siteGroupLabel": "火山引擎",
+      "siteGroupIcon": "/icons/providers/volcengine.svg",
+      "siteMemberLabel": "AgentPlan"
+    },
+    {
+      "id": "tripo",
+      "label": "Tripo3D",
+      "url": "https://openapi.tripo3d.ai/v3",
+      "icon": "/icons/providers/tripo-color.svg"
+    },
+    {
+      "id": "deepseek",
+      "label": "DeepSeek",
+      "url": "https://api.deepseek.com",
+      "icon": "/icons/providers/deepseek.svg"
+    },
+    {
+      "id": "xiaomimimo",
+      "label": "Xiaomi MiMo TP",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "icon": "/icons/providers/xiaomimimo.svg",
+      "siteGroupId": "xiaomimimo",
+      "siteGroupLabel": "Xiaomi MiMo",
+      "siteGroupIcon": "/icons/providers/xiaomimimo.svg",
+      "siteMemberLabel": "Token Plan"
+    },
+    {
+      "id": "xiaomimimo-api",
+      "label": "Xiaomi MiMo",
+      "url": "https://api.xiaomimimo.com",
+      "icon": "/icons/providers/xiaomimimo.svg",
+      "siteGroupId": "xiaomimimo",
+      "siteGroupLabel": "Xiaomi MiMo",
+      "siteGroupIcon": "/icons/providers/xiaomimimo.svg",
+      "siteMemberLabel": "通用站点"
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "url": "https://api.openai.com",
+      "icon": "/icons/providers/openai.svg"
+    },
+    {
+      "id": "google",
+      "label": "Google AI",
+      "url": "https://generativelanguage.googleapis.com",
+      "icon": "/icons/providers/google.svg"
+    },
+    {
+      "id": "runninghub",
+      "label": "RunningHUB CN",
+      "url": "https://www.runninghub.cn",
+      "icon": "/icons/providers/runninghub2.png",
+      "siteGroupId": "runninghub",
+      "siteGroupLabel": "RunningHUB",
+      "siteGroupIcon": "/icons/providers/runninghub2.png",
+      "siteMemberLabel": "CN 站"
+    },
+    {
+      "id": "runninghub-ai",
+      "label": "RunningHUB AI",
+      "url": "https://www.runninghub.ai",
+      "icon": "/icons/providers/runninghub2.png",
+      "siteGroupId": "runninghub",
+      "siteGroupLabel": "RunningHUB",
+      "siteGroupIcon": "/icons/providers/runninghub2.png",
+      "siteMemberLabel": "国际站"
+    },
+    {
+      "id": "yunwu",
+      "label": "云雾 CN站",
+      "url": "https://yunwu.ai",
+      "icon": "/icons/providers/yunwu.png",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe",
+      "siteMemberLabel": "云雾 CN站"
+    },
+    {
+      "id": "openlux",
+      "label": "云雾 国际站",
+      "url": "https://api.openlux.ai/",
+      "icon": "/icons/providers/openlux.png",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe",
+      "siteMemberLabel": "云雾 国际站"
+    },
+    {
+      "id": "ktoken",
+      "label": "KToken",
+      "url": "https://api.kkkk.dev",
+      "icon": "/icons/providers/ktoken.png",
+      "siteGroupId": "ktoken",
+      "siteGroupLabel": "KToken",
+      "siteGroupIcon": "/icons/providers/ktoken.png"
+    },
+    {
+      "id": "ktoken-image",
+      "label": "KToken Image",
+      "url": "https://api.nvue.dev",
+      "icon": "/icons/providers/ktoken.png",
+      "siteGroupId": "ktoken",
+      "siteGroupLabel": "KToken",
+      "siteGroupIcon": "/icons/providers/ktoken.png"
+    },
+    {
+      "id": "grsai",
+      "label": "Grsai",
+      "url": "https://grsai.dakka.com.cn",
+      "icon": "/icons/providers/grsai.png",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "fal-ai",
+      "label": "fal.ai",
+      "url": "https://queue.fal.run",
+      "icon": "/icons/providers/fal.svg",
+      "iconClassName": "dark:invert-0"
+    },
+    {
+      "id": "noova",
+      "label": "Noova",
+      "url": "https://noova.cn",
+      "icon": "/icons/providers/noova.svg",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "soullens",
+      "label": "SoulLens",
+      "url": "https://soullens.org",
+      "icon": "/icons/providers/soullens.png",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "nexus-ai",
+      "label": "Nexus AI",
+      "url": "https://api.wgspai.cn",
+      "icon": "/icons/providers/nexus-ai.png",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "aistarslab",
+      "label": "AIStarsLab",
+      "url": "https://api.video.aistarslab.com/openapi",
+      "icon": "/icons/providers/aistarslab.webp"
+    },
+    {
+      "id": "llmtoken",
+      "label": "LLMToken",
+      "url": "https://llmtoken.io",
+      "icon": "/icons/providers/llmtoken.png",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    },
+    {
+      "id": "kimi",
+      "label": "Kimi",
+      "url": "https://api.moonshot.cn/v1",
+      "icon": "/icons/providers/kimi.svg"
+    },
+    {
+      "id": "kwjm",
+      "label": "开物基模",
+      "url": "https://kwjm.com",
+      "icon": "Globe",
+      "siteGroupId": "other",
+      "siteGroupLabel": "Other",
+      "siteGroupIcon": "Globe"
+    }
+  ],
+  "cloudinaryConfig": {
+    "cloudName": "",
+    "apiKey": "",
+    "apiSecret": ""
+  },
+  "workflowApiKeys": {
+    "RunningHUB": ""
+  },
+  "runningHubWorkflowConfig": {
+    "activeSite": "cn",
+    "sites": {
+      "cn": {
+        "apiKeys": []
+      },
+      "ai": {
+        "apiKeys": []
+      }
+    }
+  },
+  "workflowCategories": [
+    {
+      "key": "creative-generation",
+      "label": "创意生成",
+      "iconType": "lucide",
+      "iconName": "Wand2",
+      "iconSrc": ""
+    },
+    {
+      "key": "upscale-enhance",
+      "label": "高清修复",
+      "iconType": "lucide",
+      "iconName": "Sparkles",
+      "iconSrc": ""
+    },
+    {
+      "key": "portrait",
+      "label": "人像",
+      "iconType": "lucide",
+      "iconName": "UserRound",
+      "iconSrc": ""
+    },
+    {
+      "key": "lighting",
+      "label": "光影",
+      "iconType": "lucide",
+      "iconName": "SunMedium",
+      "iconSrc": ""
+    },
+    {
+      "key": "utility",
+      "label": "实用工具",
+      "iconType": "lucide",
+      "iconName": "Wrench",
+      "iconSrc": ""
+    }
+  ],
+  "workflowApps": [
+    {
+      "id": "runninghub-2058224050723450881",
+      "name": "Flux2精修渲染放大",
+      "description": "Product rendering refinement",
+      "category": "upscale-enhance",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "19.image",
+          "type": "image",
+          "label": "image",
+          "description": "image",
+          "required": true,
+          "acceptMultiple": false,
+          "maxImages": 1,
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "16.text",
+          "type": "text",
+          "label": "text",
+          "description": "text",
+          "required": true,
+          "defaultValue": "Product rendering refinement",
+          "visible": true
+        },
+        {
+          "id": "14.crop_if_required",
+          "type": "select",
+          "label": "crop_if_required",
+          "description": "crop_if_required",
+          "required": true,
+          "defaultValue": "no",
+          "options": [
+            {
+              "value": "yes",
+              "label": "yes"
+            },
+            {
+              "value": "no",
+              "label": "no"
+            }
+          ],
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "14.max_width",
+          "type": "int",
+          "label": "max_width",
+          "description": "max_width",
+          "required": true,
+          "defaultValue": 2048,
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "14.max_height",
+          "type": "int",
+          "label": "max_height",
+          "description": "max_height",
+          "required": true,
+          "defaultValue": 2048,
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "14.min_width",
+          "type": "int",
+          "label": "min_width",
+          "description": "min_width",
+          "required": false,
+          "defaultValue": 0,
+          "visible": false
+        },
+        {
+          "id": "14.min_height",
+          "type": "int",
+          "label": "min_height",
+          "description": "min_height",
+          "required": false,
+          "defaultValue": 0,
+          "visible": false
+        },
+        {
+          "id": "15.unet_name",
+          "type": "select",
+          "label": "unet_name",
+          "description": "unet_name",
+          "required": true,
+          "defaultValue": "flux-2-klein-9b-nvfp4.safetensors",
+          "options": [
+            {
+              "value": "flux-2-klein-9b-nvfp4.safetensors",
+              "label": "flux-2-klein-9b-nvfp4.safetensors"
+            },
+            {
+              "value": "flux-2-dev.safetensors",
+              "label": "flux-2-dev.safetensors"
+            },
+            {
+              "value": "flux-2-schnell.safetensors",
+              "label": "flux-2-schnell.safetensors"
+            }
+          ],
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "18.lora_name",
+          "type": "select",
+          "label": "lora_name",
+          "description": "lora_name",
+          "required": true,
+          "defaultValue": "XRJXV4_000003000.safetensors",
+          "options": [
+            {
+              "value": "XRJXV4_000003000.safetensors",
+              "label": "XRJXV4_000003000.safetensors"
+            }
+          ],
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "18.strength_model",
+          "type": "float",
+          "label": "strength_model",
+          "description": "strength_model",
+          "required": true,
+          "defaultValue": 0.8600000000000002,
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "1.batch_size",
+          "type": "int",
+          "label": "batch_size",
+          "description": "batch_size",
+          "required": true,
+          "defaultValue": 1,
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "5.noise_seed",
+          "type": "int",
+          "label": "noise_seed",
+          "description": "noise_seed",
+          "required": true,
+          "defaultValue": 885121325334863,
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "15.weight_dtype",
+          "type": "select",
+          "label": "weight_dtype",
+          "description": "weight_dtype",
+          "required": true,
+          "defaultValue": "default",
+          "options": [
+            {
+              "value": "default",
+              "label": "default"
+            },
+            {
+              "value": "fp8_e4m3fn",
+              "label": "fp8_e4m3fn"
+            },
+            {
+              "value": "fp8_e4m3fn_fast",
+              "label": "fp8_e4m3fn_fast"
+            },
+            {
+              "value": "fp8_e5m2",
+              "label": "fp8_e5m2"
+            }
+          ],
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "17.clip_name",
+          "type": "select",
+          "label": "clip_name",
+          "description": "clip_name",
+          "required": true,
+          "defaultValue": "qwen_3_8b_fp8mixed.safetensors",
+          "options": [
+            {
+              "value": "qwen_3_8b_fp8mixed.safetensors",
+              "label": "qwen_3_8b_fp8mixed.safetensors"
+            },
+            {
+              "value": "qwen_3_4b.safetensors",
+              "label": "qwen_3_4b.safetensors"
+            },
+            {
+              "value": "qwen_2.5_vl_7b.safetensors",
+              "label": "qwen_2.5_vl_7b.safetensors"
+            }
+          ],
+          "visible": true,
+          "uiPlacement": "settings"
+        },
+        {
+          "id": "10.vae_name",
+          "type": "select",
+          "label": "vae_name",
+          "description": "vae_name",
+          "required": true,
+          "defaultValue": "flux2-vae.safetensors",
+          "options": [
+            {
+              "value": "flux2-vae.safetensors",
+              "label": "flux2-vae.safetensors"
+            },
+            {
+              "value": "flux_vae/diffusion_pytorch_model.safetensors",
+              "label": "flux_vae/diffusion_pytorch_model.safetensors"
+            },
+            {
+              "value": "sdxl_vae.safetensors",
+              "label": "sdxl_vae.safetensors"
+            }
+          ],
+          "visible": true,
+          "uiPlacement": "settings"
+        }
+      ],
+      "requiresPrompt": true,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "promptEditorWidth": {
+        "default": 560,
+        "min": 480,
+        "max": 720
+      },
+      "platformData": {
+        "appId": "2058224050723450881",
+        "appUrl": "/run/ai-app/2058224050723450881"
+      }
+    },
+    {
+      "id": "runninghub-2058159084049883137",
+      "name": "Qwen-Image-Layered图像分层",
+      "description": "Qwen-Image-Layered图像分层/拆分图层; 3层: 5分钟; 8层: 10分钟; ",
+      "category": "utility",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "114.image",
+          "type": "image",
+          "label": "image",
+          "description": "图片输入",
+          "required": true,
+          "acceptMultiple": false,
+          "maxImages": 1,
+          "visible": true
+        },
+        {
+          "id": "132.value",
+          "type": "select",
+          "label": "分层数量",
+          "buttonLabel": "分层数量",
+          "description": "分层数量",
+          "required": true,
+          "defaultValue": "3",
+          "options": [
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            }
+          ],
+          "acceptMultiple": false,
+          "visible": true
+        }
+      ],
+      "requiresPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2058159084049883137",
+        "appUrl": "/run/ai-app/2058159084049883137",
+        "rawSchema": {
+          "code": 0,
+          "msg": "success",
+          "errorMessages": null,
+          "data": {
+            "webappName": "Qwen-Image-Layered图像分层/拆分图层",
+            "description": "<p>Qwen-Image-Layered图像分层/拆分图层</p><p>3层: 5分钟<br/>8层: 10分钟</p>",
+            "nodeInfoList": [
+              {
+                "nodeId": "114",
+                "nodeName": "LoadImage",
+                "fieldName": "image",
+                "fieldType": "IMAGE",
+                "description": "图片输入"
+              },
+              {
+                "nodeId": "132",
+                "nodeName": "JWInteger",
+                "fieldName": "value",
+                "fieldType": "INT",
+                "description": "分层数量"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "runninghub-2028382324844404738",
+      "name": "SeedVR2.5图片高清放大",
+      "description": "高清放大",
+      "category": "upscale-enhance",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "82.index",
+          "type": "select",
+          "label": "index",
+          "description": "Resolution",
+          "required": true,
+          "options": [
+            {
+              "value": "value1",
+              "label": "1k"
+            },
+            {
+              "value": "value2",
+              "label": "2k"
+            },
+            {
+              "value": "value3",
+              "label": "3k"
+            },
+            {
+              "value": "value4",
+              "label": "4k"
+            },
+            {
+              "value": "value5",
+              "label": "6k"
+            },
+            {
+              "value": "value6",
+              "label": "8k"
+            }
+          ]
+        },
+        {
+          "id": "36.image",
+          "type": "image",
+          "label": "image",
+          "description": "Image input",
+          "required": true,
+          "maxImages": 1
+        },
+        {
+          "id": "85.value",
+          "type": "int",
+          "label": "value",
+          "description": "Seed",
+          "required": true,
+          "defaultValue": 100
+        }
+      ],
+      "requiresPrompt": false,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2028382324844404738",
+        "appUrl": "https://www.runninghub.ai/openapi/v2/run/ai-app/2028382324844404738"
+      }
+    },
+    {
+      "id": "runninghub-2035216458107588609",
+      "name": "去除背景",
+      "description": "RMBG-背景分割",
+      "category": "utility",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "3.image",
+          "type": "image",
+          "label": "image",
+          "description": "图片输入",
+          "required": true,
+          "acceptMultiple": false,
+          "maxImages": 1
+        }
+      ],
+      "requiresPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2035216458107588609",
+        "appUrl": "https://www.runninghub.cn/openapi/v2/run/ai-app/2035216458107588609"
+      }
+    },
+    {
+      "id": "runninghub-1965719821155500034",
+      "name": "高定版高清修复[去AI感加细节]",
+      "description": "0.65和0.45是Lora的基础值，越往上调，越偏离原图，最大值为1",
+      "category": "upscale-enhance",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "14.image",
+          "type": "image",
+          "label": "image",
+          "description": "image",
+          "required": true,
+          "maxImages": 1
+        },
+        {
+          "id": "22.text",
+          "type": "text",
+          "label": "正向提示词",
+          "description": "text",
+          "required": true,
+          "defaultValue": "高质量,8K,写实的皮肤质感，优质肌肤，不要变动脸部和所有画面，不要增加皮肤上的斑点"
+        },
+        {
+          "id": "21.text",
+          "type": "text",
+          "label": "反向提示词",
+          "description": "text",
+          "required": true,
+          "defaultValue": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走，黑色的手，黑色的手臂，黑色的脚，黑色的腿，黑痣，很多的痣，黑色的斑点，红色的斑点斑点，肉色的斑点，有斑点的脸，有斑点的颈，有斑点的胸膛，有斑点的手，有斑点的脚，皱褶的衣服乳晕，乳点，青筋，青筋暴起，血管，凸起的血管，痘痘，粉刺，脸上痘痘，脖子上痘痘，小粒点白色脓疱，色斑，暗沉，红血丝，毛孔堵塞，油脂粒突出，过度出油，油光满面"
+        },
+        {
+          "id": "18.strength_model",
+          "type": "float",
+          "label": "strength_model",
+          "description": "strength_model",
+          "required": true,
+          "defaultValue": 0.65
+        },
+        {
+          "id": "19.strength_model",
+          "type": "float",
+          "label": "strength_model",
+          "description": "strength_model",
+          "required": true,
+          "defaultValue": 0.45
+        }
+      ],
+      "requiresPrompt": true,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "1965719821155500034",
+        "appUrl": "https://www.runninghub.ai/openapi/v2/run/ai-app/1965719821155500034"
+      }
+    },
+    {
+      "id": "runninghub-2011779636312674305",
+      "name": "人像精修/真实皮肤/去AI化",
+      "description": "人像精修，真实皮肤，去AI化超级工作流",
+      "category": "portrait",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "29.image",
+          "type": "image",
+          "label": "image",
+          "description": "上传图像",
+          "required": true,
+          "maxImages": 1
+        }
+      ],
+      "requiresPrompt": false,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2011779636312674305",
+        "appUrl": "https://www.runninghub.ai/openapi/v2/run/ai-app/2011779636312674305"
+      }
+    },
+    {
+      "id": "runninghub-2035983832586919938",
+      "name": "超级角色定妆照",
+      "description": "角色定妆造像师：定格工业级角色美学巅峰/文生图/角色设计",
+      "category": "portrait",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "116.text",
+          "type": "text",
+          "label": "text",
+          "description": "输入人物描述，可简易描写，系统会自动优化扩写",
+          "required": true
+        }
+      ],
+      "requiresPrompt": true,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": false,
+      "maxInputImages": 0,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2035983832586919938",
+        "appUrl": "https://www.runninghub.ai/openapi/v2/run/ai-app/2035983832586919938"
+      }
+    },
+    {
+      "id": "runninghub-1993854573083295745",
+      "name": "Z-image",
+      "description": "Z-image文生图工作流",
+      "category": "creative-generation",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "5.text",
+          "type": "text",
+          "label": "text",
+          "description": "提示词",
+          "required": true
+        },
+        {
+          "id": "7.batch_size",
+          "type": "int",
+          "label": "batch_size",
+          "description": "数量",
+          "required": true,
+          "defaultValue": 1
+        },
+        {
+          "id": "11.aspect_ratio",
+          "type": "select",
+          "label": "aspect_ratio",
+          "description": "尺寸",
+          "required": true,
+          "options": [
+            {
+              "value": "1:1 (Perfect Square)",
+              "label": "1:1"
+            },
+            {
+              "value": "2:3 (Classic Portrait)",
+              "label": "2:3"
+            },
+            {
+              "value": "3:2 (Golden Landscape)",
+              "label": "3:2"
+            },
+            {
+              "value": "3:4 (Golden Ratio)",
+              "label": "3:4"
+            },
+            {
+              "value": "3:5 (Elegant Vertical)",
+              "label": "3:5"
+            },
+            {
+              "value": "4:3 (Classic Landscape)",
+              "label": "4:3"
+            },
+            {
+              "value": "4:5 (Artistic Frame)",
+              "label": "4:5"
+            },
+            {
+              "value": "5:3 (Wide Horizon)",
+              "label": "5:3"
+            },
+            {
+              "value": "5:4 (Balanced Frame)",
+              "label": "5:4"
+            },
+            {
+              "value": "5:7 (Balanced Portrait)",
+              "label": "5:7"
+            },
+            {
+              "value": "5:8 (Tall Portrait)",
+              "label": "5:8"
+            },
+            {
+              "value": "7:5 (Elegant Landscape)",
+              "label": "7:5"
+            },
+            {
+              "value": "7:9 (Modern Portrait)",
+              "label": "7:9"
+            },
+            {
+              "value": "8:5 (Cinematic View)",
+              "label": "8:5"
+            },
+            {
+              "value": "9:7 (Artful Horizon)",
+              "label": "9:7"
+            },
+            {
+              "value": "9:16 (Slim Vertical)",
+              "label": "9:16"
+            },
+            {
+              "value": "9:19 (Tall Slim)",
+              "label": "9:19"
+            },
+            {
+              "value": "9:21 (Ultra Tall)",
+              "label": "9:21"
+            },
+            {
+              "value": "9:32 (Skyline)",
+              "label": "9:32"
+            },
+            {
+              "value": "16:9 (Panorama)",
+              "label": "16:9"
+            },
+            {
+              "value": "19:9 (Cinematic Ultrawide)",
+              "label": "19:9"
+            },
+            {
+              "value": "21:9 (Epic Ultrawide)",
+              "label": "21:9"
+            },
+            {
+              "value": "32:9 (Extreme Ultrawide)",
+              "label": "32:9"
+            }
+          ],
+          "defaultValue": "3:4 (Golden Ratio)"
+        }
+      ],
+      "requiresPrompt": true,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": false,
+      "maxInputImages": 0,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "1993854573083295745",
+        "appUrl": "https://www.runninghub.ai/openapi/v2/run/ai-app/1993854573083295745"
+      }
+    },
+    {
+      "id": "runninghub-2058487627854213122",
+      "name": "Z-image文生图+写实光影LORA",
+      "description": "Z-image 文生图 + 写实光影 LORA",
+      "category": "creative-generation",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "96.text",
+          "type": "text",
+          "label": "text",
+          "description": "提示词",
+          "required": true
+        },
+        {
+          "id": "91.width",
+          "type": "int",
+          "label": "width",
+          "description": "宽度",
+          "required": true,
+          "defaultValue": 1280,
+          "visible": false
+        },
+        {
+          "id": "91.height",
+          "type": "int",
+          "label": "height",
+          "description": "高度",
+          "required": true,
+          "defaultValue": 1920,
+          "visible": false
+        },
+        {
+          "id": "91.batch_size",
+          "type": "int",
+          "label": "batch_size",
+          "description": "生成张数",
+          "required": true,
+          "defaultValue": 1,
+          "visible": false
+        }
+      ],
+      "requiresPrompt": true,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": false,
+      "maxInputImages": 0,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2058487627854213122",
+        "appUrl": "https://www.runninghub.cn/openapi/v2/run/ai-app/2058487627854213122",
+        "useNodeImageSizePresets": true
+      }
+    },
+    {
+      "id": "runninghub-2048835530208579585",
+      "name": "Flux2 Klein 增强现实LoRA",
+      "description": "Flux2 Klein 增强现实 LoRA",
+      "category": "creative-generation",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "278.image",
+          "type": "image",
+          "label": "image",
+          "description": "image",
+          "required": true,
+          "maxImages": 1
+        },
+        {
+          "id": "352.text",
+          "type": "text",
+          "label": "text",
+          "description": "text",
+          "required": true,
+          "defaultValue": "realistic，将三维渲染的游戏画面，变为真实的照片"
+        }
+      ],
+      "requiresPrompt": true,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2048835530208579585",
+        "appUrl": "https://www.runninghub.cn/openapi/v2/run/ai-app/2048835530208579585"
+      }
+    },
+    {
+      "id": "runninghub-2036835673671471105",
+      "name": "心宝-遮挡光-V2",
+      "description": "每次运行返2张图，1张打光直出，1张全屏细节迁移",
+      "category": "lighting",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "115.image",
+          "type": "image",
+          "label": "image",
+          "description": "上传图片",
+          "required": true,
+          "maxImages": 1
+        },
+        {
+          "id": "141.value",
+          "type": "boolean",
+          "label": "value",
+          "description": "开启后光效减弱-进入温柔模式",
+          "required": true,
+          "defaultValue": false
+        },
+        {
+          "id": "134.strength_model",
+          "type": "float",
+          "label": "strength_model",
+          "description": "温柔模式1~1.5，普通模式0.5~0.8",
+          "required": true,
+          "defaultValue": 0.8
+        },
+        {
+          "id": "116.text",
+          "type": "text",
+          "label": "text",
+          "description": "提示词，必须看说明",
+          "required": true,
+          "defaultValue": "Xinbao, Preserve original composition exactly"
+        }
+      ],
+      "requiresPrompt": true,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2036835673671471105",
+        "appUrl": "https://www.runninghub.ai/openapi/v2/run/ai-app/2036835673671471105"
+      }
+    },
+    {
+      "id": "runninghub-2036035773568393217",
+      "name": "光影优化2.0",
+      "description": "光影优化2.0：加强光影、融合图像",
+      "category": "lighting",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "5.image",
+          "type": "image",
+          "label": "image",
+          "description": "上传图片",
+          "required": true,
+          "acceptMultiple": false,
+          "maxImages": 1
+        },
+        {
+          "id": "60.index",
+          "type": "select",
+          "label": "index",
+          "description": "选择场景色调",
+          "required": true,
+          "options": [
+            {
+              "value": "2",
+              "label": "2号超暖色调"
+            },
+            {
+              "value": "1",
+              "label": "1号冷色调"
+            },
+            {
+              "value": "4",
+              "label": "4号自定义"
+            },
+            {
+              "value": "3",
+              "label": "3号夜晚场景"
+            },
+            {
+              "value": "0",
+              "label": "常用"
+            }
+          ],
+          "acceptMultiple": false
+        },
+        {
+          "id": "92.text",
+          "type": "text",
+          "label": "text",
+          "description": "4号自定义-提示词",
+          "required": true,
+          "options": [
+            {
+              "value": "STRING",
+              "label": "STRING"
+            }
+          ],
+          "acceptMultiple": false
+        }
+      ],
+      "requiresPrompt": true,
+      "allowEmptyPrompt": true,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2036035773568393217",
+        "appUrl": "/run/ai-app/2036035773568393217"
+      }
+    },
+    {
+      "id": "runninghub-2035653343107883009",
+      "name": "360°VR全景图",
+      "description": "默认生成比例为2:1。  360°VR全景图可用全景图查看软件自定义截取场景图片。截取的宫格图可用来制作AI视频的场景参考图。  注意！生成会有概率失败（场景无法闭环、场景扭曲等），如果出现问题可以通过其他软件进行重绘修复，如果错误较大需要重新抽卡。另外上传的场景图片影响也比较大",
+      "category": "utility",
+      "provider": "RunningHUB",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "4.image",
+          "type": "image",
+          "label": "image",
+          "description": "image",
+          "required": true,
+          "acceptMultiple": false,
+          "maxImages": 1
+        },
+        {
+          "id": "37.resolution",
+          "type": "select",
+          "label": "resolution",
+          "description": "resolution",
+          "required": true,
+          "defaultValue": "",
+          "options": [
+            {
+              "value": "1k",
+              "label": "1k"
+            },
+            {
+              "value": "2k",
+              "label": "2k"
+            },
+            {
+              "value": "4k",
+              "label": "4k"
+            }
+          ],
+          "acceptMultiple": false
+        },
+        {
+          "id": "37.channel",
+          "type": "select",
+          "label": "channel",
+          "description": "channel",
+          "required": true,
+          "defaultValue": "",
+          "options": [
+            {
+              "value": "Third-party",
+              "label": "Third-party"
+            },
+            {
+              "value": "Official",
+              "label": "Official"
+            }
+          ],
+          "acceptMultiple": false
+        }
+      ],
+      "requiresPrompt": false,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2035653343107883009",
+        "appUrl": "/run/ai-app/2035653343107883009"
+      }
+    },
+    {
+      "id": "runninghub-2014324103431327746",
+      "name": "FlashVSR视频高清放大",
+      "description": "温馨提醒：有时候上传失败 也会显示上传成功，导致输出的视频是案例视频，刷新 重新提交就行。  视频高清放大，一键提升视频分辨率与画质，修复模糊画质，无损放大视频画质。  建议放大倍数一般选择2-4倍。",
+      "category": "upscale-enhance",
+      "provider": "RunningHUB",
+      "outputType": "video",
+      "params": [
+        {
+          "id": "11.video",
+          "type": "video",
+          "label": "video",
+          "description": "上传视频",
+          "required": true,
+          "acceptMultiple": false
+        },
+        {
+          "id": "12.value",
+          "type": "int",
+          "label": "放大倍数",
+          "description": "放大倍数（数值范围2-4）",
+          "required": true,
+          "options": [
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            }
+          ],
+          "acceptMultiple": false
+        }
+      ],
+      "requiresPrompt": false,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": false,
+      "requiresInputVideo": true,
+      "requiresInputAudio": false,
+      "maxInputImages": 0,
+      "maxInputVideos": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2014324103431327746",
+        "appUrl": "/run/ai-app/2014324103431327746"
+      }
+    },
+    {
+      "id": "runninghub-2041762363707236354",
+      "name": "SeedVR2视频高清放大",
+      "description": "seedvr2视频高清放大",
+      "category": "upscale-enhance",
+      "provider": "RunningHUB",
+      "outputType": "video",
+      "params": [
+        {
+          "id": "51.video",
+          "type": "video",
+          "label": "video",
+          "description": "视频",
+          "required": true,
+          "acceptMultiple": false
+        },
+        {
+          "id": "54.select",
+          "type": "select",
+          "label": "select",
+          "description": "放大倍数",
+          "required": true,
+          "options": [
+            {
+              "value": "3",
+              "label": "2K"
+            },
+            {
+              "value": "2",
+              "label": "1K"
+            },
+            {
+              "value": "1",
+              "label": "720P"
+            }
+          ],
+          "acceptMultiple": false
+        }
+      ],
+      "requiresPrompt": false,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": false,
+      "requiresInputVideo": true,
+      "requiresInputAudio": false,
+      "maxInputImages": 0,
+      "maxInputVideos": 1,
+      "imageUploadStrategy": "runninghub",
+      "platformData": {
+        "appId": "2041762363707236354",
+        "appUrl": "/run/ai-app/2041762363707236354"
+      }
+    },
+    {
+      "id": "comfyui-seedvr2-5-image-upscale",
+      "name": "SeedVR2.5图片高清放大",
+      "description": "本地 ComfyUI 高清放大",
+      "category": "upscale-enhance",
+      "provider": "ComfyUI",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "82.index",
+          "type": "int",
+          "label": "分辨率",
+          "description": "输出分辨率级别 (1=1k, 2=2k, 3=3k, 4=4k, 5=6k, 6=8k)",
+          "required": true,
+          "defaultValue": 2,
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "options": [
+            {
+              "value": "1",
+              "label": "1K"
+            },
+            {
+              "value": "2",
+              "label": "2K"
+            },
+            {
+              "value": "3",
+              "label": "3K"
+            },
+            {
+              "value": "4",
+              "label": "4K"
+            },
+            {
+              "value": "5",
+              "label": "6K"
+            },
+            {
+              "value": "6",
+              "label": "8K"
+            }
+          ]
+        },
+        {
+          "id": "36.image",
+          "type": "image",
+          "label": "输入图片",
+          "description": "待放大的图片",
+          "required": true,
+          "maxImages": 1
+        },
+        {
+          "id": "85.Number",
+          "type": "int",
+          "label": "Seed",
+          "description": "随机种子",
+          "required": true,
+          "defaultValue": 100
+        }
+      ],
+      "requiresPrompt": false,
+      "allowEmptyPrompt": false,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "local",
+      "platformData": {
+        "serverUrl": "http://127.0.0.1:8188",
+        "workflowName": "SeedVR2.5图片高清放大.json"
+      }
+    },
+    {
+      "id": "comfyui-seedvr2-5-image-upscale-v2",
+      "name": "SeedVR2.5图片高清放大V2",
+      "description": "本地 ComfyUI 高清放大 (V2, 原生分辨率COMBO)",
+      "category": "upscale-enhance",
+      "provider": "ComfyUI",
+      "outputType": "image",
+      "params": [
+        {
+          "id": "5.image",
+          "type": "image",
+          "label": "image",
+          "required": true,
+          "maxImages": 1
+        },
+        {
+          "id": "3.resolution",
+          "type": "int",
+          "label": "resolution",
+          "required": true,
+          "defaultValue": 2048,
+          "min": 16,
+          "max": 16384,
+          "step": 2
+        },
+        {
+          "id": "3.seed",
+          "type": "int",
+          "label": "seed",
+          "required": true,
+          "defaultValue": 686699471,
+          "min": 0,
+          "max": 4294967295,
+          "step": 1
+        },
+        {
+          "id": "3.batch_size",
+          "type": "int",
+          "label": "batch_size",
+          "required": true,
+          "defaultValue": 1,
+          "min": 1,
+          "max": 16,
+          "step": 1
+        },
+        {
+          "id": "3.max_resolution",
+          "type": "int",
+          "label": "max_resolution",
+          "required": true,
+          "defaultValue": 8000,
+          "min": 16,
+          "max": 16384,
+          "step": 2
+        },
+        {
+          "id": "3.uniform_batch_size",
+          "type": "boolean",
+          "label": "uniform_batch_size",
+          "required": true,
+          "defaultValue": false
+        },
+        {
+          "id": "3.color_correction",
+          "type": "select",
+          "label": "color_correction",
+          "required": true,
+          "defaultValue": "lab"
+        },
+        {
+          "id": "3.temporal_overlap",
+          "type": "int",
+          "label": "temporal_overlap",
+          "required": true,
+          "defaultValue": 0,
+          "min": 0,
+          "max": 16,
+          "step": 1
+        },
+        {
+          "id": "3.prepend_frames",
+          "type": "int",
+          "label": "prepend_frames",
+          "required": true,
+          "defaultValue": 0,
+          "min": 0,
+          "max": 32,
+          "step": 1
+        },
+        {
+          "id": "3.input_noise_scale",
+          "type": "float",
+          "label": "input_noise_scale",
+          "required": true,
+          "defaultValue": 0,
+          "min": 0,
+          "max": 1,
+          "step": 0.001
+        },
+        {
+          "id": "3.latent_noise_scale",
+          "type": "float",
+          "label": "latent_noise_scale",
+          "required": true,
+          "defaultValue": 0,
+          "min": 0,
+          "max": 1,
+          "step": 0.001
+        },
+        {
+          "id": "3.offload_device",
+          "type": "select",
+          "label": "offload_device",
+          "required": true,
+          "defaultValue": "cpu"
+        },
+        {
+          "id": "3.enable_debug",
+          "type": "boolean",
+          "label": "enable_debug",
+          "required": true,
+          "defaultValue": false
+        },
+        {
+          "id": "1.model",
+          "type": "select",
+          "label": "model",
+          "required": true,
+          "defaultValue": "seedvr2_ema_7b_sharp_fp8_e4m3fn_mixed_block35_fp16.safetensors",
+          "options": [
+            {
+              "value": "seedvr2_ema_7b_sharp_fp16.safetensors",
+              "label": "7B Sharp FP16 (速度优先)"
+            },
+            {
+              "value": "seedvr2_ema_7b_sharp_fp8_e4m3fn_mixed_block35_fp16.safetensors",
+              "label": "7B Sharp FP8 Mixed (速度+性能)"
+            },
+            {
+              "value": "seedvr2_ema_7b_fp8_e4m3fn.safetensors",
+              "label": "7B FP8"
+            },
+            {
+              "value": "seedvr2_ema_3b_fp8_e4m3fn.safetensors",
+              "label": "3B FP8 (速度优先)"
+            },
+            {
+              "value": "seedvr2_ema_3b_fp16.safetensors",
+              "label": "3B FP16"
+            }
+          ]
+        },
+        {
+          "id": "1.device",
+          "type": "select",
+          "label": "device",
+          "required": true,
+          "defaultValue": "cuda:0"
+        },
+        {
+          "id": "1.blocks_to_swap",
+          "type": "int",
+          "label": "blocks_to_swap",
+          "required": true,
+          "defaultValue": 32,
+          "min": 0,
+          "max": 36,
+          "step": 1
+        },
+        {
+          "id": "1.swap_io_components",
+          "type": "boolean",
+          "label": "swap_io_components",
+          "required": true,
+          "defaultValue": true
+        },
+        {
+          "id": "1.offload_device",
+          "type": "select",
+          "label": "offload_device",
+          "required": true,
+          "defaultValue": "cpu"
+        },
+        {
+          "id": "1.cache_model",
+          "type": "boolean",
+          "label": "cache_model",
+          "required": true,
+          "defaultValue": true
+        },
+        {
+          "id": "1.attention_mode",
+          "type": "select",
+          "label": "attention_mode",
+          "required": true,
+          "defaultValue": "sdpa"
+        },
+        {
+          "id": "2.model",
+          "type": "select",
+          "label": "model",
+          "required": true,
+          "defaultValue": "ema_vae_fp16.safetensors"
+        },
+        {
+          "id": "2.device",
+          "type": "select",
+          "label": "device",
+          "required": true,
+          "defaultValue": "cuda:0"
+        },
+        {
+          "id": "2.encode_tiled",
+          "type": "boolean",
+          "label": "encode_tiled",
+          "required": true,
+          "defaultValue": true
+        },
+        {
+          "id": "2.encode_tile_size",
+          "type": "int",
+          "label": "encode_tile_size",
+          "required": true,
+          "defaultValue": 1024,
+          "min": 64,
+          "step": 32
+        },
+        {
+          "id": "2.encode_tile_overlap",
+          "type": "int",
+          "label": "encode_tile_overlap",
+          "required": true,
+          "defaultValue": 128,
+          "min": 0,
+          "step": 32
+        },
+        {
+          "id": "2.decode_tiled",
+          "type": "boolean",
+          "label": "decode_tiled",
+          "required": true,
+          "defaultValue": true
+        },
+        {
+          "id": "2.decode_tile_size",
+          "type": "int",
+          "label": "decode_tile_size",
+          "required": true,
+          "defaultValue": 1024,
+          "min": 64,
+          "step": 32
+        },
+        {
+          "id": "2.decode_tile_overlap",
+          "type": "int",
+          "label": "decode_tile_overlap",
+          "required": true,
+          "defaultValue": 128,
+          "min": 0,
+          "step": 32
+        },
+        {
+          "id": "2.tile_debug",
+          "type": "select",
+          "label": "tile_debug",
+          "required": true,
+          "defaultValue": "false"
+        },
+        {
+          "id": "2.offload_device",
+          "type": "select",
+          "label": "offload_device",
+          "required": true,
+          "defaultValue": "cpu"
+        },
+        {
+          "id": "2.cache_model",
+          "type": "boolean",
+          "label": "cache_model",
+          "required": true,
+          "defaultValue": false
+        }
+      ],
+      "requiresPrompt": false,
+      "allowEmptyPrompt": true,
+      "requiresInputImage": true,
+      "maxInputImages": 1,
+      "imageUploadStrategy": "local",
+      "platformData": {
+        "serverUrl": "http://127.0.0.1:8188",
+        "workflowName": "SeedVR2.5图片高清放大V2.json"
+      }
+    }
+  ],
+  "providerOrder": [
+    {
+      "key": "OpenAI",
+      "displayName": "OpenAI"
+    },
+    {
+      "key": "Google",
+      "displayName": "Google"
+    },
+    {
+      "key": "DeepSeek",
+      "displayName": "DeepSeek"
+    },
+    {
+      "key": "Claude",
+      "displayName": "Claude"
+    },
+    {
+      "key": "Xiaomi MiMo",
+      "displayName": "小米 MiMo"
+    },
+    {
+      "key": "智谱",
+      "displayName": "智谱"
+    },
+    {
+      "key": "Grok",
+      "displayName": "Grok"
+    },
+    {
+      "key": "MiniMax",
+      "displayName": "MiniMax"
+    },
+    {
+      "key": "阿里巴巴",
+      "displayName": "阿里巴巴"
+    },
+    {
+      "key": "Kuaishou",
+      "displayName": "快手可灵"
+    },
+    {
+      "key": "火山引擎",
+      "displayName": "火山引擎"
+    },
+    {
+      "key": "影眸科技",
+      "displayName": "影眸科技"
+    },
+    {
+      "key": "Flux",
+      "displayName": "Flux"
+    },
+    {
+      "key": "Midjourney",
+      "displayName": "Midjourney"
+    },
+    {
+      "key": "Suno",
+      "displayName": "Suno"
+    },
+    {
+      "key": "RunningHUB",
+      "displayName": "RunningHUB"
+    },
+    {
+      "key": "Topaz",
+      "displayName": "Topaz"
+    },
+    {
+      "key": "Grsai",
+      "displayName": "Grsai"
+    },
+    {
+      "key": "Kimi",
+      "displayName": "Kimi"
+    }
+  ],
+  "apiConfigsMode": "defaultsOnly",
+  "apiConfigs": [
+    {
+      "id": "gpt-image-2",
+      "provider": "GPT Image 2",
+      "displayName": "GPT Image 2",
+      "modelName": "gpt-image-2",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "api.apilio.ai": "gpt-image-2",
+        "apimart.ai": "gpt-image-2",
+        "apib.ai": "gpt-image-2",
+        "aiuxu.com": "gpt-image-2",
+        "aishuch.com": "gpt-image-2",
+        "api.video.aistarslab.com": "gpt-image-2",
+        "llmtoken.io": "gpt-image-2",
+        "prismapi.cn": "prism-gpt-image-2",
+        "kwjm.com": "gpt-image-2"
+      },
+      "apimartGptImageChannel": "default",
+      "prismGptImageChannel": "channel-1",
+      "prismMediaUploadMode": "auto",
+      "gptImageEditRoute": "edits",
+      "gptImageQuality": "auto",
+      "gptImageBackground": "auto",
+      "gptImageModeration": "auto",
+      "gptImageOutputFormat": "png",
+      "gptImageOutputCompression": 92
+    },
+    {
+      "id": "gpt-image-2.5-flare",
+      "provider": "OpenAI",
+      "displayName": "GPT Image 2.5 Flare",
+      "modelName": "gpt-image-2.5-flare",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "resolutions": [
+        "1K",
+        "2K",
+        "4K"
+      ],
+      "modelNameByBaseUrl": {
+        "api.apilio.ai": "gpt-image-2.5-flare",
+        "apimart.ai": "gpt-image-2.5-flare",
+        "apib.ai": "gpt-image-2.5-flare",
+        "aiuxu.com": "gpt-image-2.5-flare",
+        "aishuch.com": "gpt-image-2.5-flare",
+        "api.video.aistarslab.com": "gpt-image-2.5-flare",
+        "fal.run": "openai/gpt-image-2.5/flare/text-to-image",
+        "runninghub.ai": "gpt-image-2.5",
+        "runninghub.cn": "gpt-image-2.5",
+        "kwjm.com": "gpt-image-2.5-flare"
+      },
+      "gptImage25Mode": "flare",
+      "aistarsLabChannel": "55",
+      "gptImage25RhChannel": "standard",
+      "gptImageEditRoute": "edits",
+      "gptImageQuality": "high",
+      "gptImageBackground": "auto",
+      "gptImageModeration": "auto",
+      "gptImageOutputFormat": "png",
+      "gptImageOutputCompression": 92
+    },
+    {
+      "id": "gpt-image-2.5-sunburst",
+      "provider": "OpenAI",
+      "displayName": "GPT Image 2.5 Sunburst",
+      "modelName": "gpt-image-2.5-sunburst",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "resolutions": [
+        "1K",
+        "2K",
+        "4K"
+      ],
+      "modelNameByBaseUrl": {
+        "api.apilio.ai": "gpt-image-2.5-sunburst",
+        "apimart.ai": "gpt-image-2.5-sunburst",
+        "apib.ai": "gpt-image-2.5-sunburst",
+        "aiuxu.com": "gpt-image-2.5-sunburst",
+        "aishuch.com": "gpt-image-2.5-sunburst",
+        "api.video.aistarslab.com": "gpt-image-2.5-sunburst",
+        "fal.run": "openai/gpt-image-2.5/sunburst/text-to-image",
+        "runninghub.ai": "gpt-image-2.5",
+        "runninghub.cn": "gpt-image-2.5",
+        "kwjm.com": "gpt-image-2.5-sunburst"
+      },
+      "gptImage25Mode": "sunburst",
+      "aistarsLabChannel": "55",
+      "gptImage25RhChannel": "standard",
+      "gptImageEditRoute": "edits",
+      "gptImageQuality": "high",
+      "gptImageBackground": "auto",
+      "gptImageModeration": "auto",
+      "gptImageOutputFormat": "png",
+      "gptImageOutputCompression": 92
+    },
+    {
+      "id": "gpt-5.5",
+      "provider": "GPT 5.5",
+      "displayName": "GPT 5.5",
+      "modelName": "gpt-5.5",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "soullens.fun": "gpt-5.5",
+        "runninghub.ai": "openai/gpt-5.5",
+        "runninghub.cn": "openai/gpt-5.5",
+        "kwjm.com": "gpt-5.5"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gpt-6-astra",
+      "provider": "GPT 6 Astra",
+      "displayName": "GPT 6 Astra",
+      "modelName": "gpt-6-astra",
+      "type": "Chat",
+      "chatApiFormat": "responses",
+      "contextWindowTokens": 1050000,
+      "maxOutputTokens": 128000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "api.apilio.ai": "gpt-6-astra",
+        "runninghub.ai": "openai/gpt-6-astra",
+        "runninghub.cn": "openai/gpt-6-astra",
+        "kwjm.com": "gpt-6-astra"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "provider": "GPT 6.1 Sol",
+      "displayName": "GPT 6.1 Sol",
+      "modelName": "gpt-6.1-sol",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1050000,
+      "maxOutputTokens": 128000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "openai/gpt-6.1-sol",
+        "runninghub.cn": "openai/gpt-6.1-sol"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gpt-6-sol",
+      "provider": "GPT 6 Sol",
+      "displayName": "GPT 6 Sol",
+      "modelName": "gpt-6-sol",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1050000,
+      "maxOutputTokens": 128000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "openai/gpt-6-sol",
+        "runninghub.cn": "openai/gpt-6-sol"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gpt-6-luna",
+      "provider": "GPT 6 Luna",
+      "displayName": "GPT 6 Luna",
+      "modelName": "gpt-6-luna",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1050000,
+      "maxOutputTokens": 128000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "openai/gpt-6-luna",
+        "runninghub.cn": "openai/gpt-6-luna"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "provider": "GPT 5.6 Terra",
+      "displayName": "GPT 5.6 Terra",
+      "modelName": "gpt-5.6-terra",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "rhLlmChannel": "economy",
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "openai/gpt-5.6-terra-saver",
+        "runninghub.cn": "openai/gpt-5.6-terra-saver",
+        "kwjm.com": "gpt-5.6-terra"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "provider": "GPT 5.6 Sol",
+      "displayName": "GPT 5.6 Sol",
+      "modelName": "gpt-5.6-sol",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "rhLlmChannel": "economy",
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "openai/gpt-5.6-sol-saver",
+        "runninghub.cn": "openai/gpt-5.6-sol-saver",
+        "kwjm.com": "gpt-5.6-sol"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "provider": "GPT 5.6 Luna",
+      "displayName": "GPT 5.6 Luna",
+      "modelName": "gpt-5.6-luna",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "rhLlmChannel": "standard",
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "openai/gpt-5.6-luna",
+        "runninghub.cn": "openai/gpt-5.6-luna",
+        "kwjm.com": "gpt-5.6-luna"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gemini-3.1-flash-lite-image-preview",
+      "provider": "Nano Banana 2",
+      "displayName": "Nano Banana 2 Lite",
+      "modelName": "gemini-3.1-flash-lite-image",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "gptImageUploadMode": "auto",
+      "modelNameByBaseUrl": {
+        "generativelanguage.googleapis.com": "gemini-3.1-flash-lite-image",
+        "yunwu.ai": "gemini-3.1-flash-lite-image",
+        "soullens.fun": "AA-nanobanana2lite-1k",
+        "ai.comfly.org": "gemini-3.1-flash-lite-image",
+        "ai.comfly.chat": "gemini-3.1-flash-lite-image",
+        "api.bltcy.ai": "gemini-3.1-flash-lite-image",
+        "api.apilio.ai": "gemini-3.1-flash-lite-image",
+        "ai.t8star.org": "gemini-3.1-flash-lite-image",
+        "ai.t8star.cn": "gemini-3.1-flash-lite-image"
+      }
+    },
+    {
+      "id": "gemini-nano-banana-2.1",
+      "provider": "Gemini Nano Banana 2.1",
+      "displayName": "Nano Banana 2.1",
+      "modelName": "gemini-nano-banana-2.1",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "gptImageUploadMode": "auto",
+      "prismMediaUploadMode": "auto",
+      "geminiNanoBanana21Channel": "ext",
+      "modelNameByBaseUrl": {
+        "generativelanguage.googleapis.com": "gemini-nano-banana-2.1",
+        "apimart.ai": "gemini-nano-banana-2.1-ext",
+        "api.apilio.ai": "gemini-nano-banana-2.1",
+        "runninghub.ai": "nano-banana2-gemini31flash",
+        "runninghub.cn": "nano-banana2-gemini31flash"
+      }
+    },
+    {
+      "id": "gemini-3.1-flash-image-preview",
+      "provider": "gemini-3.1-flash-image",
+      "displayName": "Nano Banana 2",
+      "modelName": "gemini-3.1-flash-image-preview",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "gptImageUploadMode": "auto",
+      "prismMediaUploadMode": "auto",
+      "modelNameByBaseUrl": {
+        "generativelanguage.googleapis.com": "gemini-3.1-flash-image-preview",
+        "apimart.ai": "gemini-3.1-flash-image-preview",
+        "apib.ai": "gemini-3.1-flash-image-preview",
+        "aiuxu.com": "gemini-3.1-flash-image-preview",
+        "aishuch.com": "gemini-3.1-flash-image-preview",
+        "yunwu.ai": "gemini-3.1-flash-image-preview",
+        "soullens.org": "gemini-3.1-flash-image",
+        "soullens.fun": "gemini-3.1-flash-image",
+        "queue.fal.run": "nano-banana-2",
+        "fal.run": "nano-banana-2",
+        "api.video.aistarslab.com": "gemini-3.1-flash-image-preview",
+        "prismapi.cn": "prism-nano-banana-2",
+        "kwjm.com": "gemini-3.1-flash-image-preview-gp"
+      }
+    },
+    {
+      "id": "nano-banana-2",
+      "provider": "gemini-3-pro-image",
+      "displayName": "Nano Banana Pro",
+      "modelName": "nano-banana-2",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "gptImageUploadMode": "auto",
+      "prismMediaUploadMode": "auto",
+      "modelNameByBaseUrl": {
+        "ai.comfly.org": "nano-banana-pro",
+        "ai.comfly.chat": "nano-banana-pro",
+        "api.bltcy.ai": "nano-banana-pro",
+        "api.apilio.ai": "nano-banana-pro",
+        "ai.t8star.org": "nano-banana-pro",
+        "ai.t8star.cn": "nano-banana-pro",
+        "generativelanguage.googleapis.com": "gemini-3-pro-image-preview",
+        "yunwu.ai": "gemini-3-pro-image-preview",
+        "soullens.org": "gemini-3-pro-image-preview",
+        "soullens.fun": "gemini-3-pro-image-preview",
+        "queue.fal.run": "nano-banana-pro",
+        "fal.run": "nano-banana-pro",
+        "apimart.ai": "gemini-3-pro-image-preview",
+        "apib.ai": "gemini-3-pro-image-preview",
+        "aiuxu.com": "gemini-3-pro-image-preview",
+        "aishuch.com": "gemini-3-pro-image-preview",
+        "api.video.aistarslab.com": "gemini-3-pro-image-preview",
+        "prismapi.cn": "prism-nano-banana-pro",
+        "kwjm.com": "gemini-3-pro-image-preview-hq"
+      }
+    },
+    {
+      "id": "gemini-3.1-pro",
+      "provider": "Gemini 3.1 Pro",
+      "displayName": "Gemini 3.1 Pro",
+      "modelName": "gemini-3.1-pro-preview",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "google/gemini-3.1-pro-preview",
+        "runninghub.cn": "google/gemini-3.1-pro-preview",
+        "kwjm.com": "gemini-3.1-pro-preview"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gemini-3.5-flash",
+      "provider": "Gemini 3.5 Flash",
+      "displayName": "Gemini 3.5 Flash",
+      "modelName": "gemini-3.5-flash",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "google/gemini-3.5-flash",
+        "runninghub.cn": "google/gemini-3.5-flash",
+        "kwjm.com": "gemini-3.5-flash"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gemini-3.5-flash-lite",
+      "provider": "Gemini 3.5 Flash Lite",
+      "displayName": "Gemini 3.5 Flash Lite",
+      "modelName": "gemini-3.5-flash-lite",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "google/gemini-3.5-flash-lite",
+        "runninghub.cn": "google/gemini-3.5-flash-lite"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gemini-3.6-flash",
+      "provider": "Gemini 3.6 Flash",
+      "displayName": "Gemini 3.6 Flash",
+      "modelName": "gemini-3.6-flash",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "google/gemini-3.6-flash",
+        "runninghub.cn": "google/gemini-3.6-flash"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gemini-3.7-flash",
+      "provider": "Gemini 3.7 Flash",
+      "displayName": "Gemini 3.7 Flash",
+      "modelName": "gemini-3.7-flash",
+      "type": "Chat",
+      "contextWindowTokens": 1048576,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "google/gemini-3.7-flash",
+        "runninghub.cn": "google/gemini-3.7-flash"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "provider": "Gemini 3.8 Flash",
+      "displayName": "Gemini 3.8 Flash",
+      "modelName": "gemini-3.8-flash",
+      "type": "Chat",
+      "contextWindowTokens": 1048576,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "api.apilio.ai": "gemini-3.8-flash",
+        "apimart.ai": "gemini-3.8-flash",
+        "apib.ai": "gemini-3.8-flash",
+        "aiuxu.com": "gemini-3.8-flash",
+        "aishuch.com": "gemini-3.8-flash",
+        "queue.fal.run": "google/gemini-3.8-flash",
+        "fal.run/openrouter/router/openai/v1": "google/gemini-3.8-flash",
+        "runninghub.ai": "google/gemini-3.8-flash",
+        "runninghub.cn": "google/gemini-3.8-flash"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "deepseek-flash",
+      "provider": "DeepSeek Flash",
+      "displayName": "DeepSeek Flash",
+      "modelName": "deepseek-flash",
+      "type": "Chat",
+      "chatApiFormat": "responses",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://api.deepseek.com",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "ai.comfly.org": "deepseek-flash",
+        "runninghub.ai": "deepseek/deepseek-flash",
+        "runninghub.cn": "deepseek/deepseek-flash"
+      },
+      "deepseekMediaUploadMode": "auto",
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "provider": "DeepSeek V4 Pro",
+      "displayName": "DeepSeek V4 Pro",
+      "modelName": "deepseek-v4-pro",
+      "type": "Chat",
+      "chatApiFormat": "responses",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://api.deepseek.com",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "deepseek/deepseek-v4-pro",
+        "runninghub.cn": "deepseek/deepseek-v4-pro",
+        "kwjm.com": "deepseek-v4-pro"
+      },
+      "chatModelCapability": "text"
+    },
+    {
+      "id": "mimo-v2.5-pro",
+      "provider": "Xiaomi MiMo V2.5 Pro",
+      "displayName": "MiMo-V2.5-Pro",
+      "modelName": "mimo-v2.5-pro",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "useGlobalBaseUrl": false,
+      "mimoWebSearch": false,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "mimo-v2.5",
+      "provider": "Xiaomi MiMo V2.5",
+      "displayName": "MiMo-V2.5",
+      "modelName": "mimo-v2.5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "useGlobalBaseUrl": false,
+      "mimoWebSearch": false,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "mimo-v2-flash",
+      "provider": "Xiaomi MiMo V2 Flash",
+      "displayName": "MiMo V2 Flash",
+      "modelName": "mimo-v2-flash",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "useGlobalBaseUrl": false,
+      "mimoWebSearch": false,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-opus-4-5",
+      "provider": "Claude Opus 4.5",
+      "displayName": "Claude Opus 4.5",
+      "modelName": "claude-opus-4-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-opus-4.5",
+        "runninghub.cn": "anthropic/claude-opus-4.5"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-opus-4-6",
+      "provider": "Claude Opus 4.6",
+      "displayName": "Claude Opus 4.6",
+      "modelName": "claude-opus-4-6",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "soullens.fun": "claude-opus-4-6",
+        "runninghub.ai": "anthropic/claude-opus-4.6",
+        "runninghub.cn": "anthropic/claude-opus-4.6",
+        "kwjm.com": "claude-opus-4-6"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-opus-4-7",
+      "provider": "Claude Opus 4.7",
+      "displayName": "Claude Opus 4.7",
+      "modelName": "claude-opus-4-7",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "soullens.fun": "claude-opus-4-7",
+        "runninghub.ai": "anthropic/claude-opus-4.7",
+        "runninghub.cn": "anthropic/claude-opus-4.7",
+        "kwjm.com": "claude-opus-4-7"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-opus-4-8",
+      "provider": "Claude Opus 4.8",
+      "displayName": "Claude Opus 4.8",
+      "modelName": "claude-opus-4-8",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "soullens.fun": "claude-opus-4-8",
+        "runninghub.ai": "anthropic/claude-opus-4.8",
+        "runninghub.cn": "anthropic/claude-opus-4.8",
+        "kwjm.com": "claude-opus-4-8"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "provider": "Claude Sonnet 4.6",
+      "displayName": "Claude Sonnet 4.6",
+      "modelName": "claude-sonnet-4-6",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-sonnet-4.6",
+        "runninghub.cn": "anthropic/claude-sonnet-4.6",
+        "kwjm.com": "claude-sonnet-4-6"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-opus-5-5",
+      "provider": "Claude Opus 5.5",
+      "displayName": "Claude Opus 5.5",
+      "modelName": "claude-opus-5-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-opus-5.5",
+        "runninghub.cn": "anthropic/claude-opus-5.5"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-opus-5",
+      "provider": "Claude Opus 5",
+      "displayName": "Claude Opus 5",
+      "modelName": "claude-opus-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-opus-5",
+        "runninghub.cn": "anthropic/claude-opus-5",
+        "kwjm.com": "claude-opus-5"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-fable-5-1",
+      "provider": "Claude Fable 5.1",
+      "displayName": "Claude Fable 5.1",
+      "modelName": "claude-fable-5-1",
+      "type": "Chat",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {},
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-fable-5",
+      "provider": "Claude Fable 5",
+      "displayName": "Claude Fable 5",
+      "modelName": "claude-fable-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-fable-5",
+        "runninghub.cn": "anthropic/claude-fable-5",
+        "kwjm.com": "claude-fable-5"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "provider": "Claude Sonnet 5.5",
+      "displayName": "Claude Sonnet 5.5",
+      "modelName": "claude-sonnet-5-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {},
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-sonnet-5",
+      "provider": "Claude Sonnet 5",
+      "displayName": "Claude Sonnet 5",
+      "modelName": "claude-sonnet-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-sonnet-5",
+        "runninghub.cn": "anthropic/claude-sonnet-5",
+        "kwjm.com": "claude-sonnet-5"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "gemini-flash-latest",
+      "provider": "Gemini Flash Latest",
+      "displayName": "Gemini Flash Latest",
+      "modelName": "gemini-flash-latest",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "minimax-m2.5",
+      "provider": "MiniMax M2.5",
+      "displayName": "MiniMax M2.5",
+      "modelName": "MiniMax-M2.5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "text"
+    },
+    {
+      "id": "grok-4-1-fast-non-reasoning",
+      "provider": "Grok 4.1 Fast",
+      "displayName": "Grok 4.1 Fast",
+      "modelName": "grok-4-1-fast-non-reasoning",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "grok-4-1-fast-reasoning",
+      "provider": "Grok 4.1 Fast Reasoning",
+      "displayName": "Grok 4.1 Fast Reasoning",
+      "modelName": "grok-4-1-fast-reasoning",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "grok-4.1",
+      "provider": "Grok 4.1",
+      "displayName": "Grok 4.1",
+      "modelName": "grok-4.1",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "grok-4.2",
+      "provider": "Grok 4.2",
+      "displayName": "Grok 4.2",
+      "modelName": "grok-4.2",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "provider": "Claude Haiku 5.5",
+      "displayName": "Claude Haiku 5.5",
+      "modelName": "claude-haiku-5-5",
+      "type": "Chat",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {},
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "provider": "Claude Haiku 4.5",
+      "displayName": "Claude Haiku 4.5",
+      "modelName": "claude-haiku-4-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-haiku-4.5",
+        "runninghub.cn": "anthropic/claude-haiku-4.5",
+        "kwjm.com": "claude-haiku-4-5-20251001"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "claude-sonnet-4-5",
+      "provider": "Claude Sonnet 4.5",
+      "displayName": "Claude Sonnet 4.5",
+      "modelName": "claude-sonnet-4-5",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "anthropic/claude-sonnet-4.5",
+        "runninghub.cn": "anthropic/claude-sonnet-4.5",
+        "kwjm.com": "claude-sonnet-4-5-20250929"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "doubao-seed-2-1-pro",
+      "provider": "Volcengine Doubao Seed 2.1 Pro",
+      "displayName": "Seed 2.1 Pro",
+      "modelName": "doubao-seed-2-1-pro-260628",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "bytedance/doubao-seed-2.1-pro",
+        "runninghub.cn": "bytedance/doubao-seed-2.1-pro"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "doubao-seed-2-1-turbo",
+      "provider": "Volcengine Doubao Seed 2.1 Turbo",
+      "displayName": "Seed 2.1 Turbo",
+      "modelName": "doubao-seed-2-1-turbo-260628",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "bytedance/doubao-seed-2.1-turbo",
+        "runninghub.cn": "bytedance/doubao-seed-2.1-turbo",
+        "kwjm.com": "doubao-seed-2-1-turbo"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "doubao-seed-evolving",
+      "provider": "Volcengine Doubao Seed Evolving",
+      "displayName": "Seed Evolving",
+      "modelName": "doubao-seed-evolving",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true,
+      "chatApiFormat": "responses",
+      "volcengineChatMediaUploadMode": "auto",
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "bytedance/doubao-seed-evolving",
+        "runninghub.cn": "bytedance/doubao-seed-evolving"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "grok-4.3",
+      "provider": "Grok 4.3",
+      "displayName": "Grok 4.3",
+      "modelName": "grok-4.3",
+      "type": "Chat",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "xai/grok-4.3",
+        "runninghub.cn": "xai/grok-4.3"
+      },
+      "chatModelCapability": "multimodal"
+    },
+    {
+      "id": "kimi-k3",
+      "provider": "Kimi",
+      "displayName": "Kimi K3",
+      "modelName": "kimi-k3",
+      "type": "Chat",
+      "chatApiFormat": "chat-completions",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://api.moonshot.cn/v1",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "multimodal",
+      "modelNameByBaseUrl": {
+        "kwjm.com": "kimi-k3"
+      }
+    },
+    {
+      "id": "glm-5-3-flash",
+      "provider": "Zhipu GLM",
+      "displayName": "GLM 5.3 Flash",
+      "modelName": "glm-5-3-flash",
+      "type": "Chat",
+      "chatApiFormat": "responses",
+      "contextWindowTokens": 1048576,
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com/api/plan/v3",
+      "useGlobalBaseUrl": true,
+      "chatModelCapability": "multimodal",
+      "modelNameByBaseUrl": {
+        "kwjm.com": "glm-5.3-flash"
+      }
+    },
+    {
+      "id": "glm-5.3",
+      "provider": "Zhipu GLM",
+      "displayName": "GLM 5.3",
+      "modelName": "glm-5.3",
+      "type": "Chat",
+      "chatApiFormat": "responses",
+      "contextWindowTokens": 1000000,
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com/api/plan/v3",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "glm-5.3",
+        "runninghub.cn": "glm-5.3",
+        "ark.cn-beijing.volces.com": "glm-5.3",
+        "kwjm.com": "glm-5.3"
+      },
+      "chatModelCapability": "text"
+    },
+    {
+      "id": "topaz-upscale-image",
+      "provider": "Topaz",
+      "displayName": "Topaz Upscale Image",
+      "modelName": "topaz-upscale-image",
+      "type": "Image",
+      "imageOperation": "postProcess",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "imageRequestMode": "async",
+      "topazModel": "Standard V2",
+      "topazUpscaleFactor": 2,
+      "topazOutputFormat": "jpeg",
+      "topazSubjectDetection": "All",
+      "topazFaceEnhancement": true,
+      "topazFaceEnhancementStrength": 0.8,
+      "topazImageUploadMode": "base64",
+      "modelNameByBaseUrl": {
+        "ai.comfly.org": "fal-ai/topaz/upscale/image",
+        "ai.comfly.chat": "fal-ai/topaz/upscale/image",
+        "api.bltcy.ai": "fal-ai/topaz/upscale/image",
+        "api.apilio.ai": "fal-ai/topaz/upscale/image",
+        "ai.t8star.org": "fal-ai/topaz/upscale/image",
+        "ai.t8star.cn": "fal-ai/topaz/upscale/image",
+        "fal.run": "fal-ai/topaz/upscale/image",
+        "queue.fal.run": "fal-ai/topaz/upscale/image"
+      }
+    },
+    {
+      "id": "topaz-upscale-video",
+      "provider": "Topaz",
+      "displayName": "Topaz Upscale Video",
+      "modelName": "topaz-upscale-video",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "topazVideoModel": "Proteus",
+      "topazVideoUpscaleFactor": 2,
+      "topazVideoH264Output": false,
+      "topazVideoUploadMode": "fal",
+      "modelNameByBaseUrl": {
+        "ai.comfly.org": "fal-ai/topaz/upscale/video",
+        "ai.comfly.chat": "fal-ai/topaz/upscale/video",
+        "api.bltcy.ai": "fal-ai/topaz/upscale/video",
+        "api.apilio.ai": "fal-ai/topaz/upscale/video",
+        "ai.t8star.org": "fal-ai/topaz/upscale/video",
+        "ai.t8star.cn": "fal-ai/topaz/upscale/video",
+        "fal.run": "fal-ai/topaz/upscale/video"
+      }
+    },
+    {
+      "id": "rh-upscale",
+      "provider": "RunningHUB",
+      "displayName": "RH Upscale",
+      "modelName": "rhart-video/rh-upscale/enhance-frame",
+      "type": "Video",
+      "videoOperation": "postProcess",
+      "key": "",
+      "url": "https://www.runninghub.ai",
+      "useGlobalBaseUrl": false,
+      "restrictBaseUrlToConfiguredDomains": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "rhart-video/rh-upscale/enhance-frame",
+        "runninghub.cn": "rhart-video/rh-upscale/enhance-frame"
+      }
+    },
+    {
+      "id": "video-quality-enhance",
+      "provider": "火山引擎 AI MediaKit",
+      "displayName": "视频画质增强",
+      "modelName": "enhance-video",
+      "type": "Video",
+      "videoOperation": "postProcess",
+      "videoEnhanceDefaultVersion": "generative",
+      "videoEnhanceResolution": "1080p",
+      "videoEnhanceScene": "common",
+      "videoEnhanceStyle": "hd",
+      "videoEnhanceBitrateLevel": "medium",
+      "videoEnhanceBitDepth": "8",
+      "videoEnhanceCodec": "h264",
+      "key": "",
+      "url": "https://www.runninghub.ai",
+      "useGlobalBaseUrl": false,
+      "restrictBaseUrlToConfiguredDomains": true,
+      "modelNameByBaseUrl": {
+        "mediakit.cn-beijing.volces.com": "enhance-video",
+        "runninghub.ai": "volc-enhance/video",
+        "runninghub.cn": "volc-enhance/video",
+        "kwjm.com": "doubao-video-enhance"
+      }
+    },
+    {
+      "id": "nano-banana",
+      "provider": "Nano Banana",
+      "displayName": "Nano Banana",
+      "modelName": "nano-banana",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "hidden": true,
+      "modelNameByBaseUrl": {
+        "generativelanguage.googleapis.com": "gemini-2.5-flash-image",
+        "kwjm.com": "gemini-2.5-flash-image"
+      }
+    },
+    {
+      "id": "volcengine-image-enhance",
+      "provider": "火山引擎",
+      "displayName": "图像增强",
+      "modelName": "lens_lqir",
+      "type": "Image",
+      "imageOperation": "postProcess",
+      "key": "",
+      "url": "https://visual.volcengineapi.com",
+      "useGlobalBaseUrl": false,
+      "resolutions": [
+        "144p",
+        "240p",
+        "360p",
+        "480p",
+        "540p",
+        "720p",
+        "1080p",
+        "2k"
+      ],
+      "volcengineUseByteDanceCredentials": true,
+      "volcengineImageEnhanceUploadMode": "auto"
+    },
+    {
+      "id": "jimeng-ai-smart-upscale",
+      "provider": "火山引擎",
+      "displayName": "即梦AI-智能超清",
+      "modelName": "jimeng_i2i_seed3_tilesr_cvtob",
+      "type": "Image",
+      "imageOperation": "postProcess",
+      "key": "",
+      "url": "https://visual.volcengineapi.com",
+      "useGlobalBaseUrl": false,
+      "resolutions": [
+        "4K",
+        "8K"
+      ],
+      "volcengineUseByteDanceCredentials": true,
+      "volcengineImageEnhanceUploadMode": "auto"
+    },
+    {
+      "id": "seedream-5.0",
+      "provider": "Volcengine Seedream 5.0",
+      "displayName": "Seedream 5.0 Lite",
+      "modelName": "doubao-seedream-5-0-260128",
+      "type": "Image",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "modelNameByBaseUrl": {
+        "apimart.ai": "doubao-seedream-5-0-lite",
+        "apib.ai": "doubao-seedream-5-0-lite",
+        "aiuxu.com": "doubao-seedream-5-0-lite",
+        "aishuch.com": "doubao-seedream-5-0-lite",
+        "api.video.aistarslab.com": "seedream-5-lite",
+        "runninghub.ai": "seedream-v5-lite",
+        "runninghub.cn": "seedream-v5-lite",
+        "kwjm.com": "doubao-seedream-5-0-lite"
+      },
+      "aistarsLabChannel": "65"
+    },
+    {
+      "id": "seedream-5.0-pro",
+      "provider": "Volcengine Seedream 5.0 Pro",
+      "displayName": "Seedream 5.0 Pro",
+      "modelName": "doubao-seedream-5-0-pro-260628",
+      "type": "Image",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": false,
+      "modelNameByBaseUrl": {
+        "api.apilio.ai": "seedream-v5-pro",
+        "ai.comfly.org": "seedream-v5-pro",
+        "ai.comfly.chat": "seedream-v5-pro",
+        "api.bltcy.ai": "seedream-v5-pro",
+        "ai.t8star.org": "seedream-v5-pro",
+        "ai.t8star.cn": "seedream-v5-pro",
+        "apimart.ai": "doubao-seedream-5-0-pro",
+        "apib.ai": "doubao-seedream-5-0-pro",
+        "aiuxu.com": "doubao-seedream-5-0-pro",
+        "aishuch.com": "doubao-seedream-5-0-pro",
+        "api.video.aistarslab.com": "seedream-5-pro",
+        "runninghub.ai": "seedream-v5-pro",
+        "runninghub.cn": "seedream-v5-pro"
+      },
+      "aistarsLabChannel": "65",
+      "resolutions": [
+        "1K",
+        "2K"
+      ],
+      "seedreamOptimizeMode": "standard"
+    },
+    {
+      "id": "seedream-5.0-flash",
+      "provider": "Volcengine Seedream 5.0 Flash",
+      "displayName": "Seedream 5.0 Flash",
+      "modelName": "doubao-seedream-5-0-flash-260915",
+      "type": "Image",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": false,
+      "modelNameByBaseUrl": {
+        "api.apilio.ai": "seedream-v5-flash",
+        "ai.comfly.org": "seedream-v5-flash",
+        "ai.comfly.chat": "seedream-v5-flash",
+        "api.bltcy.ai": "seedream-v5-flash",
+        "ai.t8star.org": "seedream-v5-flash",
+        "ai.t8star.cn": "seedream-v5-flash",
+        "apimart.ai": "seedream-5-0-flash",
+        "apib.ai": "seedream-5-0-flash",
+        "aiuxu.com": "seedream-5-0-flash",
+        "aishuch.com": "seedream-5-0-flash",
+        "runninghub.ai": "seedream-v5-flash",
+        "runninghub.cn": "seedream-v5-flash"
+      },
+      "resolutions": [
+        "1K",
+        "1.5K",
+        "2K"
+      ],
+      "seedreamOptimizeMode": "standard"
+    },
+    {
+      "id": "wan-2.7",
+      "provider": "Alibaba Wan",
+      "displayName": "Wan 2.7",
+      "modelName": "wan-2.7",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.cn": "wan-2.7",
+        "runninghub.ai": "wan-2.7",
+        "kwjm.com": "wan2.7-image"
+      }
+    },
+    {
+      "id": "qwen-image-3.0",
+      "provider": "Alibaba Qwen Image",
+      "displayName": "千问 3.0",
+      "modelName": "qwen-image-3.0",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "qwen-image-3.0",
+        "runninghub.cn": "qwen-image-3.0"
+      },
+      "resolutions": [
+        "Auto",
+        "1K",
+        "2K"
+      ]
+    },
+    {
+      "id": "qwen-image-3.0-pro",
+      "provider": "Alibaba Qwen Image",
+      "displayName": "千问 3.0 Pro",
+      "modelName": "qwen-image-3.0-pro",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "qwen-image-3.0-pro",
+        "runninghub.cn": "qwen-image-3.0-pro"
+      },
+      "resolutions": [
+        "Auto",
+        "1K",
+        "2K"
+      ]
+    },
+    {
+      "id": "seedream-4.5",
+      "provider": "Volcengine Seedream 4.5",
+      "displayName": "Seedream 4.5",
+      "modelName": "doubao-seedream-4-5-251128",
+      "type": "Image",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "modelNameByBaseUrl": {
+        "apimart.ai": "doubao-seedance-4-5",
+        "apib.ai": "doubao-seedance-4-5",
+        "aiuxu.com": "doubao-seedance-4-5",
+        "aishuch.com": "doubao-seedance-4-5",
+        "kwjm.com": "doubao-seedream-4-5"
+      }
+    },
+    {
+      "id": "seedream-4.0",
+      "provider": "Volcengine Seedream 4.0",
+      "displayName": "Seedream 4.0",
+      "modelName": "doubao-seedream-4-0-250828",
+      "type": "Image",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "modelNameByBaseUrl": {
+        "apimart.ai": "doubao-seedance-4-0",
+        "apib.ai": "doubao-seedance-4-0",
+        "aiuxu.com": "doubao-seedance-4-0",
+        "aishuch.com": "doubao-seedance-4-0",
+        "kwjm.com": "doubao-seedream-4-0"
+      }
+    },
+    {
+      "id": "gpt-image-2-1k-soullens",
+      "provider": "GPT Image 2",
+      "displayName": "GPT Image 2 1K",
+      "modelName": "gpt-image-2-1K",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "hidden": true,
+      "gptImageQuality": "auto",
+      "gptImageBackground": "auto",
+      "gptImageModeration": "auto",
+      "gptImageOutputFormat": "png",
+      "gptImageOutputCompression": 92
+    },
+    {
+      "id": "gpt-image-2-max-soullens",
+      "provider": "GPT Image 2",
+      "displayName": "GPT Image 2 Max",
+      "modelName": "gpt-image-2-max",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "hidden": true,
+      "gptImageQuality": "auto",
+      "gptImageBackground": "auto",
+      "gptImageModeration": "auto",
+      "gptImageOutputFormat": "png",
+      "gptImageOutputCompression": 92
+    },
+    {
+      "id": "flux-kontext",
+      "provider": "Flux Kontext",
+      "displayName": "Flux Kontext",
+      "modelName": "flux-kontext-pro",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "flux-2-flex",
+      "provider": "Flux 2 Flex",
+      "displayName": "Flux 2 Flex",
+      "modelName": "flux-2-flex",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "flux-2-max",
+      "provider": "Flux 2 Max",
+      "displayName": "Flux 2 Max",
+      "modelName": "flux-2-max",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "flux-2-dev",
+      "provider": "Flux 2 Dev",
+      "displayName": "Flux 2 Dev",
+      "modelName": "flux-2-dev",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "grok-imagine-image",
+      "provider": "Grok Imagine Image",
+      "displayName": "Grok Imagine Image",
+      "modelName": "grok-imagine-image",
+      "type": "Image",
+      "key": "",
+      "url": "https://queue.fal.run",
+      "useGlobalBaseUrl": false,
+      "falGrokQuality": "standard",
+      "falGrokOutputFormat": "jpeg",
+      "modelNameByBaseUrl": {
+        "queue.fal.run": "xai/grok-imagine-image",
+        "fal.run": "xai/grok-imagine-image"
+      }
+    },
+    {
+      "id": "grok-imagine-image-2.0",
+      "provider": "Grok Imagine Image 2.0",
+      "displayName": "Grok Imagine Image 2.0",
+      "modelName": "grok-imagine-image-2.0",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "ai.comfly.org": "grok-imagine-image-2.0",
+        "ai.comfly.chat": "grok-imagine-image-2.0",
+        "api.bltcy.ai": "grok-imagine-image-2.0",
+        "api.apilio.ai": "grok-imagine-image-2.0",
+        "ai.t8star.org": "grok-imagine-image-2.0",
+        "ai.t8star.cn": "grok-imagine-image-2.0",
+        "runninghub.ai": "xai/grok-imagine-2.0/text-to-image/economy",
+        "runninghub.cn": "xai/grok-imagine-2.0/text-to-image/economy"
+      },
+      "resolutions": [
+        "1K",
+        "2K"
+      ]
+    },
+    {
+      "id": "midjourney",
+      "provider": "Midjourney",
+      "displayName": "Midjourney",
+      "modelName": "mj_imagine",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "mjProxyMode": "relay",
+      "rhChannel": "standard",
+      "modelNameByBaseUrl": {
+        "apimart.ai": "midjourney",
+        "apib.ai": "midjourney",
+        "aiuxu.com": "midjourney",
+        "aishuch.com": "midjourney",
+        "ai.comfly.org": "mj_imagine",
+        "ai.comfly.chat": "mj_imagine",
+        "api.bltcy.ai": "mj_imagine",
+        "api.apilio.ai": "mj_imagine",
+        "ai.t8star.org": "mj_imagine",
+        "ai.t8star.cn": "mj_imagine",
+        "runninghub.ai": "rh-midjourney",
+        "runninghub.cn": "rh-midjourney"
+      }
+    },
+    {
+      "id": "mj-fast",
+      "provider": "Midjourney",
+      "displayName": "Midjourney Fast",
+      "modelName": "mj_fast_imagine",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "mjProxyMode": "relay",
+      "hidden": true
+    },
+    {
+      "id": "mj-relax",
+      "provider": "Midjourney",
+      "displayName": "Midjourney Relax",
+      "modelName": "mj_relax_imagine",
+      "type": "Image",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "mjProxyMode": "relay",
+      "hidden": true
+    },
+    {
+      "id": "doubao-seedance-1-5-pro-251215",
+      "provider": "Volcengine Seedance 1.5 Pro",
+      "displayName": "Seedance 1.5 Pro",
+      "modelName": "doubao-seedance-1-5-pro-251215",
+      "type": "Video",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": false,
+      "comflyApiFormat": "official",
+      "durations": [
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s"
+      ],
+      "resolutions": [
+        "480P",
+        "720P",
+        "1080P"
+      ],
+      "modelNameByBaseUrl": {
+        "kwjm.com": "doubao-seedance-1-5-pro"
+      }
+    },
+    {
+      "id": "doubao-seedance-2-0-260128",
+      "provider": "Volcengine Seedance 2.0",
+      "displayName": "Seedance 2.0",
+      "modelName": "doubao-seedance-2-0-260128",
+      "type": "Video",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true,
+      "comflyApiFormat": "official",
+      "aistarsLabChannel": "47",
+      "modelNameByBaseUrl": {
+        "api.wgspai.cn": "seedance-v2-720p",
+        "api.video.aistarslab.com": "seedance-2.0",
+        "apimart.ai": "doubao-seedance-2.0",
+        "apib.ai": "doubao-seedance-2.0",
+        "aiuxu.com": "doubao-seedance-2.0",
+        "aishuch.com": "doubao-seedance-2.0",
+        "llmtoken.io": "seedance-2.0",
+        "prismapi.cn": "prism-seedance2-720p-m",
+        "platform.sgt.site": "doubao-seedance-2-0-260128",
+        "platform.sgt.site/apimart": "seedance-2.0",
+        "kwjm.com": "kw-video-v2"
+      },
+      "prismSeedanceChannel": "channel-1",
+      "llmTokenSeedanceChannel": "standard",
+      "prismMediaUploadMode": "auto",
+      "durations": [
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "480P",
+        "720P",
+        "native1080P",
+        "native4K",
+        "1080P",
+        "2K",
+        "4K"
+      ]
+    },
+    {
+      "id": "doubao-seed3d-2-0-260328",
+      "provider": "Volcengine Seed 3D",
+      "displayName": "Seed 3D 2.0",
+      "modelName": "doubao-seed3d-2-0-260328",
+      "type": "3D",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "hyper3d-gen2",
+      "provider": "影眸科技",
+      "displayName": "Hyper3d Gen2",
+      "modelName": "hyper3d-gen2-260112",
+      "type": "3D",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "tripo-h3-1",
+      "provider": "Tripo",
+      "displayName": "Tripo H3.1",
+      "modelName": "v3.1-20260211",
+      "type": "3D",
+      "key": "",
+      "url": "https://openapi.tripo3d.ai/v3",
+      "useGlobalBaseUrl": false,
+      "restrictBaseUrlToConfiguredDomains": true
+    },
+    {
+      "id": "tripo-p2",
+      "provider": "Tripo",
+      "displayName": "Tripo P2",
+      "modelName": "P2-20260801",
+      "type": "3D",
+      "key": "",
+      "url": "https://openapi.tripo3d.ai/v3",
+      "useGlobalBaseUrl": false,
+      "restrictBaseUrlToConfiguredDomains": true
+    },
+    {
+      "id": "tripo-splat",
+      "provider": "Tripo",
+      "displayName": "Tripo Splat",
+      "modelName": "splat",
+      "type": "3D",
+      "key": "",
+      "url": "https://openapi.tripo3d.ai/v3",
+      "useGlobalBaseUrl": false,
+      "restrictBaseUrlToConfiguredDomains": true,
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "TripoSplat",
+        "runninghub.cn": "TripoSplat"
+      },
+      "rhApiKeySource": "standard",
+      "rhAiAppId": "2073483074842742786"
+    },
+    {
+      "id": "doubao-seedance-2-0-fast-260128",
+      "provider": "Volcengine Seedance 2.0 Fast",
+      "displayName": "Seedance 2.0 Fast",
+      "modelName": "doubao-seedance-2-0-fast-260128",
+      "type": "Video",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true,
+      "comflyApiFormat": "official",
+      "aistarsLabChannel": "47",
+      "modelNameByBaseUrl": {
+        "api.video.aistarslab.com": "seedance-2.0-fast",
+        "platform.sgt.site": "doubao-seedance-2-0-fast-260128",
+        "platform.sgt.site/apimart": "seedance-2.0-fast",
+        "kwjm.com": "kw-video-v2-fast"
+      },
+      "durations": [
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "480P",
+        "720P",
+        "1080P",
+        "2K",
+        "4K"
+      ]
+    },
+    {
+      "id": "doubao-seedance-2-0-mini-260615",
+      "provider": "Volcengine Seedance 2.0 Mini",
+      "displayName": "Seedance 2.0 Mini",
+      "modelName": "doubao-seedance-2-0-mini-260615",
+      "type": "Video",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true,
+      "comflyApiFormat": "official",
+      "durations": [
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "480P",
+        "720P",
+        "1080P",
+        "2K",
+        "4K"
+      ],
+      "modelNameByBaseUrl": {
+        "platform.sgt.site": "doubao-seedance-2-0-mini-260615",
+        "platform.sgt.site/apimart": "seedance-2.0-mini",
+        "kwjm.com": "kw-video-v2-mini"
+      }
+    },
+    {
+      "id": "hailuo-2.3",
+      "provider": "MiniMax Hailuo 2.3",
+      "displayName": "MiniMax Hailuo 2.3",
+      "modelName": "MiniMax-Hailuo-2.3",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "durations": [
+        "6s",
+        "10s"
+      ],
+      "resolutions": [
+        "768P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "hailuo-2.3-fast",
+      "provider": "MiniMax Hailuo 2.3 Fast",
+      "displayName": "MiniMax Hailuo 2.3 Fast",
+      "modelName": "MiniMax-Hailuo-2.3-Fast",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "durations": [
+        "6s",
+        "10s"
+      ],
+      "resolutions": [
+        "768P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "minimax-h3",
+      "provider": "MiniMax H3",
+      "displayName": "MiniMax H3",
+      "modelName": "MiniMax-H3",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "durations": [
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "768P",
+        "2K"
+      ],
+      "modelNameByBaseUrl": {
+        "runninghub.ai": "MiniMax-H3",
+        "runninghub.cn": "MiniMax-H3",
+        "ai.comfly.org": "MiniMax-H3",
+        "ai.comfly.chat": "MiniMax-H3",
+        "api.bltcy.ai": "MiniMax-H3",
+        "api.apilio.ai": "MiniMax-H3",
+        "ai.t8star.org": "MiniMax-H3",
+        "ai.t8star.cn": "MiniMax-H3",
+        "metaso.cn": "MiniMax-H3",
+        "apimart.ai": "MiniMax-H3",
+        "apib.ai": "MiniMax-H3",
+        "aiuxu.com": "MiniMax-H3",
+        "aishuch.com": "MiniMax-H3",
+        "api.video.aistarslab.com": "minimax-h3",
+        "platform.sgt.site": "MiniMax-H3",
+        "platform.sgt.site/apimart": "MiniMax-H3",
+        "kwjm.com": "MiniMax-H3"
+      },
+      "aistarsLabChannel": "59",
+      "comflyMediaUploadMode": "auto"
+    },
+    {
+      "id": "sora-2",
+      "provider": "Sora 2",
+      "displayName": "Sora 2",
+      "modelName": "sora-2",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "hidden": true,
+      "durations": [
+        "5s",
+        "10s",
+        "15s"
+      ]
+    },
+    {
+      "id": "sora-2-pro",
+      "provider": "Sora 2 Pro",
+      "displayName": "Sora 2 Pro",
+      "modelName": "sora-2-pro",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "hidden": true,
+      "durations": [
+        "15s",
+        "25s"
+      ]
+    },
+    {
+      "id": "google-veo3.1",
+      "provider": "Google Veo 3.1",
+      "displayName": "Google Veo 3.1",
+      "modelName": "veo3.1",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "yunwu.ai": "veo_3_1"
+      },
+      "durations": [
+        "8s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P",
+        "4K"
+      ],
+      "visibleBaseUrlDomains": [
+        "yunwu.ai"
+      ]
+    },
+    {
+      "id": "google-veo3.1-fast",
+      "provider": "Google Veo 3.1 Fast",
+      "displayName": "Google Veo 3.1 Fast",
+      "modelName": "veo3.1-fast",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "yunwu.ai": "veo_3_1-fast"
+      },
+      "durations": [
+        "8s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "google-veo3.1-pro",
+      "provider": "Google Veo 3.1 Pro",
+      "displayName": "Google Veo 3.1 Pro",
+      "modelName": "veo3.1-pro",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "durations": [
+        "8s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P",
+        "4K"
+      ]
+    },
+    {
+      "id": "gemini-omni-flash",
+      "provider": "Google Omni Flash",
+      "displayName": "Omni Flash",
+      "modelName": "gemini-omni-flash-preview",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "generativelanguage.googleapis.com": "gemini-omni-flash-preview",
+        "apimart.ai": "gemini-omni-flash-preview",
+        "apib.ai": "gemini-omni-flash-preview",
+        "aiuxu.com": "gemini-omni-flash-preview",
+        "aishuch.com": "gemini-omni-flash-preview",
+        "ai.comfly.org": "omni_flash-10s",
+        "ai.comfly.chat": "omni_flash-10s",
+        "api.bltcy.ai": "omni_flash-10s",
+        "api.apilio.ai": "omni_flash-10s",
+        "ai.t8star.org": "omni_flash-10s",
+        "ai.t8star.cn": "omni_flash-10s",
+        "runninghub.ai": "gemini-omni-flash",
+        "runninghub.cn": "gemini-omni-flash",
+        "api.video.aistarslab.com": "gemini-omni-flash"
+      },
+      "omniMediaUploadMode": "auto",
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s"
+      ],
+      "resolutions": [
+        "720P"
+      ]
+    },
+    {
+      "id": "gemini-omni-1.1-flash",
+      "provider": "Google Omni Flash",
+      "displayName": "Omni 1.1 Flash",
+      "modelName": "gemini-omni-1.1-flash",
+      "type": "Video",
+      "key": "",
+      "url": "https://generativelanguage.googleapis.com",
+      "useGlobalBaseUrl": false,
+      "restrictBaseUrlToConfiguredDomains": true,
+      "modelNameByBaseUrl": {
+        "generativelanguage.googleapis.com": "gemini-omni-1.1-flash"
+      },
+      "omniMediaUploadMode": "auto",
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s"
+      ],
+      "resolutions": [
+        "360P",
+        "720P",
+        "1080P",
+        "4K"
+      ]
+    },
+    {
+      "id": "happyhorse-1.1",
+      "provider": "Alibaba",
+      "displayName": "HappyHorse 1.1",
+      "modelName": "happyhorse-1.1",
+      "type": "Video",
+      "key": "",
+      "url": "https://apimart.ai",
+      "useGlobalBaseUrl": false,
+      "modelNameByBaseUrl": {
+        "apimart.ai": "happyhorse-1.1",
+        "api.video.aistarslab.com": "happyhorse-1.1"
+      },
+      "aistarsLabChannel": "56",
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "happyhorse-1-0-aistarslab",
+      "provider": "Alibaba",
+      "displayName": "HappyHorse 1.0",
+      "modelName": "happyhorse-1.0",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "aistarsLabChannel": "56",
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "grok-3",
+      "provider": "Grok Imagine Video 1.5",
+      "displayName": "Grok Imagine Video 1.5",
+      "modelName": "grok-video-3",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "api.video.aistarslab.com": "grok-imagine-video-1.5"
+      },
+      "durations": [
+        "6s",
+        "10s",
+        "15s",
+        "20s",
+        "25s",
+        "30s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "doubao-seedance-2-5-260727",
+      "provider": "ByteDance Seedance 2.5",
+      "displayName": "Seedance 2.5",
+      "modelName": "seedance-2.5",
+      "modelNameByBaseUrl": {
+        "ark.cn-beijing.volces.com": "doubao-seedance-2-5-260628",
+        "api.video.aistarslab.com": "seedance-2.5",
+        "runninghub.ai": "bytedance/seedance-2.5-token",
+        "runninghub.cn": "bytedance/seedance-2.5-token",
+        "apimart.ai": "doubao-seedance-2.5",
+        "apib.ai": "doubao-seedance-2.5",
+        "aiuxu.com": "doubao-seedance-2.5",
+        "aishuch.com": "doubao-seedance-2.5",
+        "platform.sgt.site": "doubao-seedance-2-5-260628",
+        "platform.sgt.site/apimart": "seedance-2.5",
+        "kwjm.com": "kw-video-v2.5"
+      },
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "aistarsLabChannel": "54",
+      "durations": [
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s",
+        "16s",
+        "17s",
+        "18s",
+        "19s",
+        "20s",
+        "21s",
+        "22s",
+        "23s",
+        "24s",
+        "25s",
+        "26s",
+        "27s",
+        "28s",
+        "29s",
+        "30s"
+      ],
+      "resolutions": [
+        "480P",
+        "720P"
+      ]
+    },
+    {
+      "id": "wan-3.0",
+      "provider": "Alibaba Wan",
+      "displayName": "Wan 3.0",
+      "modelName": "wan-3.0",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "api.video.aistarslab.com": "wan-3.0",
+        "ai.comfly.org": "wan3.0-video",
+        "ai.comfly.chat": "wan3.0-video",
+        "api.bltcy.ai": "wan3.0-video",
+        "api.apilio.ai": "wan3.0-video",
+        "ai.t8star.org": "wan3.0-video",
+        "ai.t8star.cn": "wan3.0-video",
+        "runninghub.ai": "wan-3.0",
+        "runninghub.cn": "wan-3.0",
+        "kwjm.com": "wan3.0-video"
+      },
+      "aistarsLabChannel": "62",
+      "aistarsLabWanVariant": "basic",
+      "durations": [
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s",
+        "16s",
+        "17s",
+        "18s",
+        "19s",
+        "20s",
+        "21s",
+        "22s",
+        "23s",
+        "24s",
+        "25s",
+        "26s",
+        "27s",
+        "28s",
+        "29s",
+        "30s"
+      ],
+      "resolutions": [
+        "480P",
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "grok-imagine-video-1.0-aistarslab",
+      "provider": "Grok Imagine Video 1.0",
+      "displayName": "Grok Imagine Video 1.0",
+      "modelName": "grok-imagine-video-1.0",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "api.video.aistarslab.com": "grok-imagine-video-1.0"
+      },
+      "aistarsLabChannel": "51",
+      "durations": [
+        "1s",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "480P",
+        "720P"
+      ]
+    },
+    {
+      "id": "kling-video-o1",
+      "provider": "Kuaishou Kling",
+      "displayName": "可灵 O1",
+      "modelName": "kling-video-o1",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "apimart.ai": "kling-video-o1",
+        "apib.ai": "kling-video-o1",
+        "aiuxu.com": "kling-video-o1",
+        "aishuch.com": "kling-video-o1"
+      },
+      "durations": [
+        "5s",
+        "10s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "kling-v2-5-turbo",
+      "provider": "Kuaishou Kling",
+      "displayName": "可灵 2.5 Turbo",
+      "modelName": "kling-v2-5-turbo",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "durations": [
+        "5s",
+        "10s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "kling-v2-6",
+      "provider": "Kuaishou Kling",
+      "displayName": "可灵 2.6",
+      "modelName": "kling-v2-6",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "apimart.ai": "kling-v2-6",
+        "apib.ai": "kling-v2-6",
+        "aiuxu.com": "kling-v2-6",
+        "aishuch.com": "kling-v2-6"
+      },
+      "durations": [
+        "5s",
+        "10s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "kling-o3",
+      "provider": "Kuaishou Kling",
+      "displayName": "可灵 O3",
+      "modelName": "kling-video-o3",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "1080P"
+      ]
+    },
+    {
+      "id": "kling-v3",
+      "provider": "Kuaishou Kling",
+      "displayName": "可灵 3.0",
+      "modelName": "kling-v3",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "apimart.ai": "kling-v3",
+        "apib.ai": "kling-v3",
+        "aiuxu.com": "kling-v3",
+        "aishuch.com": "kling-v3",
+        "api.video.aistarslab.com": "kling-v3",
+        "platform.sgt.site": "kling-3.0",
+        "platform.sgt.site/apimart": "kling-v3"
+      },
+      "aistarsLabChannel": "60",
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P",
+        "4K"
+      ]
+    },
+    {
+      "id": "kling-v3-turbo",
+      "provider": "Kuaishou Kling",
+      "displayName": "可灵 3.0 Turbo",
+      "modelName": "kling-3.0-turbo",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "apimart.ai": "kling-3.0-turbo",
+        "apib.ai": "kling-3.0-turbo",
+        "aiuxu.com": "kling-3.0-turbo",
+        "aishuch.com": "kling-3.0-turbo",
+        "platform.sgt.site": "kling-3.0-turbo",
+        "platform.sgt.site/apimart": "kling-3.0-turbo"
+      },
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P"
+      ]
+    },
+    {
+      "id": "kling-v3-omni",
+      "provider": "Kuaishou Kling",
+      "displayName": "可灵 3.0 Omni",
+      "modelName": "kling-v3-omni",
+      "type": "Video",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "modelNameByBaseUrl": {
+        "apimart.ai": "kling-v3-omni",
+        "apib.ai": "kling-v3-omni",
+        "aiuxu.com": "kling-v3-omni",
+        "aishuch.com": "kling-v3-omni",
+        "api.video.aistarslab.com": "kling-v3-omni",
+        "platform.sgt.site": "kling-3.0-omni",
+        "platform.sgt.site/apimart": "kling-v3-omni"
+      },
+      "aistarsLabChannel": "60",
+      "durations": [
+        "3s",
+        "4s",
+        "5s",
+        "6s",
+        "7s",
+        "8s",
+        "9s",
+        "10s",
+        "11s",
+        "12s",
+        "13s",
+        "14s",
+        "15s"
+      ],
+      "resolutions": [
+        "720P",
+        "1080P",
+        "4K"
+      ]
+    },
+    {
+      "id": "minimax-speech",
+      "provider": "MiniMax TTS",
+      "displayName": "MiniMax Speech",
+      "modelName": "speech-2.8-hd",
+      "type": "Audio",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true,
+      "minimaxSpeechRequestMode": "auto"
+    },
+    {
+      "id": "suno-v5",
+      "provider": "Suno",
+      "displayName": "Suno",
+      "modelName": "suno-v5",
+      "type": "Audio",
+      "key": "",
+      "url": "",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "doubao-seed-audio-1-0",
+      "provider": "Volcengine Doubao Audio",
+      "displayName": "Doubao 音频生成 1.0",
+      "modelName": "seed-audio-1.0",
+      "type": "Audio",
+      "key": "",
+      "url": "https://ark.cn-beijing.volces.com",
+      "useGlobalBaseUrl": true
+    },
+    {
+      "id": "runninghub-audio-separation-vocals",
+      "provider": "RunningHUB",
+      "displayName": "分离音频(仅人声)",
+      "modelName": "rhart-audio/extract-vocal",
+      "type": "Audio",
+      "key": "",
+      "url": "https://www.runninghub.ai",
+      "useGlobalBaseUrl": false,
+      "audioSeparationMode": "vocals",
+      "audioSeparationMediaUploadMode": "auto"
+    },
+    {
+      "id": "runninghub-audio-separation-background",
+      "provider": "RunningHUB",
+      "displayName": "分离音频(背景音)",
+      "modelName": "rhart-audio/extract-background",
+      "type": "Audio",
+      "key": "",
+      "url": "https://www.runninghub.ai",
+      "useGlobalBaseUrl": false,
+      "audioSeparationMode": "background",
+      "audioSeparationMediaUploadMode": "auto"
+    },
+    {
+      "id": "mimo-v2-tts",
+      "provider": "Xiaomi MiMo V2 TTS",
+      "displayName": "MiMo-V2-TTS",
+      "modelName": "mimo-v2-tts",
+      "type": "Audio",
+      "key": "",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "useGlobalBaseUrl": false,
+      "mimoTtsStylePresets": [
+        {
+          "category": "基础情绪",
+          "styles": [
+            "开心",
+            "悲伤",
+            "愤怒",
+            "恐惧",
+            "惊讶",
+            "兴奋",
+            "委屈",
+            "平静",
+            "冷漠"
+          ]
+        },
+        {
+          "category": "复合情绪",
+          "styles": [
+            "怅然",
+            "欣慰",
+            "无奈",
+            "愧疚",
+            "释然",
+            "嫉妒",
+            "厌倦",
+            "忐忑",
+            "动情"
+          ]
+        },
+        {
+          "category": "整体语调",
+          "styles": [
+            "温柔",
+            "高冷",
+            "活泼",
+            "严肃",
+            "慵懒",
+            "俏皮",
+            "深沉",
+            "干练",
+            "凌厉"
+          ]
+        },
+        {
+          "category": "音色定位",
+          "styles": [
+            "磁性",
+            "醇厚",
+            "清亮",
+            "空灵",
+            "稚嫩",
+            "苍老",
+            "甜美",
+            "沙哑",
+            "醇雅"
+          ]
+        },
+        {
+          "category": "人设腔调",
+          "styles": [
+            "夹子音",
+            "御姐音",
+            "正太音",
+            "大叔音",
+            "台湾腔"
+          ]
+        },
+        {
+          "category": "角色扮演",
+          "styles": [
+            "孙悟空",
+            "林黛玉"
+          ]
+        },
+        {
+          "category": "方言",
+          "styles": [
+            "东北话",
+            "四川话",
+            "河南话",
+            "粤语"
+          ]
+        },
+        {
+          "category": "唱歌",
+          "styles": [
+            "唱歌"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mimo-v2.5-tts",
+      "provider": "Xiaomi MiMo V2.5 TTS",
+      "displayName": "MiMo-V2.5-TTS",
+      "modelName": "mimo-v2.5-tts",
+      "type": "Audio",
+      "key": "",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "useGlobalBaseUrl": false,
+      "mimoTtsStylePresets": [
+        {
+          "category": "基础情绪",
+          "styles": [
+            "开心",
+            "悲伤",
+            "愤怒",
+            "恐惧",
+            "惊讶",
+            "兴奋",
+            "委屈",
+            "平静",
+            "冷漠"
+          ]
+        },
+        {
+          "category": "复合情绪",
+          "styles": [
+            "怅然",
+            "欣慰",
+            "无奈",
+            "愧疚",
+            "释然",
+            "嫉妒",
+            "厌倦",
+            "忐忑",
+            "动情"
+          ]
+        },
+        {
+          "category": "整体语调",
+          "styles": [
+            "温柔",
+            "高冷",
+            "活泼",
+            "严肃",
+            "慵懒",
+            "俏皮",
+            "深沉",
+            "干练",
+            "凌厉"
+          ]
+        },
+        {
+          "category": "音色定位",
+          "styles": [
+            "磁性",
+            "醇厚",
+            "清亮",
+            "空灵",
+            "稚嫩",
+            "苍老",
+            "甜美",
+            "沙哑",
+            "醇雅"
+          ]
+        },
+        {
+          "category": "人设腔调",
+          "styles": [
+            "夹子音",
+            "御姐音",
+            "正太音",
+            "大叔音",
+            "台湾腔"
+          ]
+        },
+        {
+          "category": "角色扮演",
+          "styles": [
+            "孙悟空",
+            "林黛玉"
+          ]
+        },
+        {
+          "category": "方言",
+          "styles": [
+            "东北话",
+            "四川话",
+            "河南话",
+            "粤语"
+          ]
+        },
+        {
+          "category": "唱歌",
+          "styles": [
+            "唱歌"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mimo-v2.5-tts-voicedesign",
+      "provider": "Xiaomi MiMo V2.5 TTS VoiceDesign",
+      "displayName": "MiMo-V2.5-TTS-VoiceDesign",
+      "modelName": "mimo-v2.5-tts-voicedesign",
+      "type": "Audio",
+      "key": "",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "useGlobalBaseUrl": false
+    },
+    {
+      "id": "mimo-v2.5-tts-voiceclone",
+      "provider": "Xiaomi MiMo V2.5 TTS VoiceClone",
+      "displayName": "MiMo-V2.5-TTS-VoiceClone",
+      "modelName": "mimo-v2.5-tts-voiceclone",
+      "type": "Audio",
+      "key": "",
+      "url": "https://token-plan-cn.xiaomimimo.com/v1",
+      "useGlobalBaseUrl": false
+    }
+  ]
+}
